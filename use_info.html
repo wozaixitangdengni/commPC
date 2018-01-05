@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="lib/layui/css/layui.css"/>
+    <link rel="stylesheet" href="css/comm.css"/>
+    <style>
+        .layui-form-radio{
+        .layui-form-radio
+        }
+        .layui-unselect.layui-form-select{
+            height: 100%;
+        }
+        .layui-select-title{
+            height: 100%;
+        }
+        .layui-select-title input{
+            width: 100%;
+            height: 100%;
+            border: none;
+            outline: none;
+            color: #757575;
+            background-color: #F3F3F3;
+            padding: 0 40px 0 30px;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+        .layui-form-select .layui-edge{
+            position: absolute;
+            z-index: 2;
+            right: 0;
+            top:3px;
+            width: 40px;
+            height: 40px;
+            border: none;
+            background-color: #E9E9E9;
+        }
+        .layui-form-select .layui-edge span{
+            display: block;
+            width: 100%;
+            height: 100%;
+            background-image: url(images/selected_time.png);
+            background-repeat: no-repeat;
+            background-position: 50%;
+            transition: all .3s;
+            -webkit-transition: all .3s;
+        }
+        .layui-form-selected .layui-edge{
+            margin-top: -3px;
+            -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+        }
+        .layui-form-selected .layui-edge span{
+            -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+<body>
+    <div id="layui-laydate1" class="layui-laydate" style="left: 286.5px; top: 525px;display: none"><div class="layui-laydate-main laydate-main-list-0"><div class="layui-laydate-header"><i class="layui-icon laydate-icon laydate-prev-y"></i><i class="layui-icon laydate-icon laydate-prev-m"></i><div class="laydate-set-ym"><span lay-ym="2018-1" lay-type="year">2018年</span><span lay-ym="2018-1" lay-type="month">1月</span></div><i class="layui-icon laydate-icon laydate-next-m"></i><i class="layui-icon laydate-icon laydate-next-y"></i></div><div class="layui-laydate-content"><table><thead><tr><th>日</th><th>一</th><th>二</th><th>三</th><th>四</th><th>五</th><th>六</th></tr></thead><tbody><tr><td class="laydate-day-prev" lay-ymd="2017-12-31">31</td><td lay-ymd="2018-1-1" class="">1</td><td lay-ymd="2018-1-2" class="">2</td><td lay-ymd="2018-1-3" class="">3</td><td lay-ymd="2018-1-4" class="">4</td><td class="layui-this" lay-ymd="2018-1-5">5</td><td lay-ymd="2018-1-6" class="">6</td></tr><tr><td lay-ymd="2018-1-7" class="">7</td><td lay-ymd="2018-1-8" class="">8</td><td lay-ymd="2018-1-9" class="">9</td><td lay-ymd="2018-1-10" class="">10</td><td lay-ymd="2018-1-11" class="">11</td><td lay-ymd="2018-1-12" class="">12</td><td lay-ymd="2018-1-13" class="">13</td></tr><tr><td lay-ymd="2018-1-14" class="">14</td><td lay-ymd="2018-1-15" class="">15</td><td lay-ymd="2018-1-16" class="">16</td><td lay-ymd="2018-1-17" class="">17</td><td lay-ymd="2018-1-18" class="">18</td><td lay-ymd="2018-1-19" class="">19</td><td lay-ymd="2018-1-20" class="">20</td></tr><tr><td lay-ymd="2018-1-21" class="">21</td><td lay-ymd="2018-1-22" class="">22</td><td lay-ymd="2018-1-23" class="">23</td><td lay-ymd="2018-1-24" class="">24</td><td lay-ymd="2018-1-25" class="">25</td><td lay-ymd="2018-1-26" class="">26</td><td lay-ymd="2018-1-27" class="">27</td></tr><tr><td lay-ymd="2018-1-28" class="">28</td><td lay-ymd="2018-1-29" class="">29</td><td lay-ymd="2018-1-30" class="">30</td><td lay-ymd="2018-1-31" class="">31</td><td class="laydate-day-next" lay-ymd="2018-2-1">1</td><td class="laydate-day-next" lay-ymd="2018-2-2">2</td><td class="laydate-day-next" lay-ymd="2018-2-3">3</td></tr><tr><td class="laydate-day-next" lay-ymd="2018-2-4">4</td><td class="laydate-day-next" lay-ymd="2018-2-5">5</td><td class="laydate-day-next" lay-ymd="2018-2-6">6</td><td class="laydate-day-next" lay-ymd="2018-2-7">7</td><td class="laydate-day-next" lay-ymd="2018-2-8">8</td><td class="laydate-day-next" lay-ymd="2018-2-9">9</td><td class="laydate-day-next" lay-ymd="2018-2-10">10</td></tr></tbody></table></div></div><div class="layui-laydate-footer"><div class="laydate-footer-btns"><span lay-type="clear" class="laydate-btns-clear">清空</span><span lay-type="now" class="laydate-btns-now">现在</span><span lay-type="confirm" class="laydate-btns-confirm">确定</span></div></div></div>
+    <div class="comm">
+        <header class="comm-head">
+        </header>
+        <div class="buy-ticket-status">
+            <!--
+                已完成流程就添加active类名
+             -->
+            <div class="buy-ticket-item active">
+                <span class="buy-ticket-item-title">选择商品</span>
+                <p><span>1</span></p>
+            </div>
+            <div class="buy-ticket-item">
+                <span class="buy-ticket-item-title">选择座位</span>
+                <p><span>2</span></p>
+            </div>
+            <div class="buy-ticket-item">
+                <span class="buy-ticket-item-title">填写信息</span>
+                <p><span>3</span></p>
+            </div>
+            <div class="buy-ticket-item">
+                <span class="buy-ticket-item-title">在线支付</span>
+                <p><span>4</span></p>
+            </div>
+            <div class="buy-ticket-item">
+                <span class="buy-ticket-item-title">购票成功</span>
+                <p><span>5</span></p>
+            </div>
+        </div>
+        <form action="" class="layui-form"  lay-filter="distpicker">
+            <main class="use-info">
+                <div class="use-info-left">
+                    <div class="use-info-left-box">
+                        <header class="use-info-left-box-title">
+                            商品信息
+                        </header>
+
+                        <div class="use-info-select-price">
+                            <p class="use-info-select-price-title">深圳出发 澳门纯玩美食观光一日游</p>
+                            <p class="price-title">
+                                <span>票种</span>
+                                <span>价格</span>
+                            </p>
+                            <div class="price-box">
+                                <input type="radio" name="price"/>
+                                <div class="price-dis">
+                                    <span>澳门一日游</span>
+                                    <a href="javascript:;">
+                                        查看详情
+                                    </a>
+                                </div>
+                                <div class="price">￥199</div>
+                            </div>
+                            <div class="price-box">
+                                <input type="radio" name="price"/>
+                                <div class="price-dis">
+                                    <span>澳门一日游</span>
+                                    <a href="javascript:;">
+                                        查看详情
+                                    </a>
+                                </div>
+                                <div class="price">￥199</div>
+                            </div>
+                            <div class="price-box">
+                                <input type="radio" name="price"/>
+                                <div class="price-dis">
+                                    <span>澳门一日游</span>
+                                    <a href="javascript:;">
+                                        查看详情
+                                    </a>
+                                </div>
+                                <div class="price">￥199</div>
+                            </div>
+                            <!-- 查看详情弹出框-->
+                            <div class="dis">
+                                <i class="close-dis">×</i>
+                                <h3 class="dis-title">
+                                    澳门一日游
+                                </h3>
+                                <div class="dis-main">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis consequuntur, cumque dicta error iure obcaecati provident voluptas. Aperiam aspernatur blanditiis consectetur cumque doloribus excepturi nam quo quos repudiandae ut, voluptatibus.</p>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis consequuntur, cumque dicta error iure obcaecati provident voluptas. Aperiam aspernatur blanditiis consectetur cumque doloribus excepturi nam quo quos repudiandae ut, voluptatibus.</p>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis consequuntur, cumque dicta error iure obcaecati provident voluptas. Aperiam aspernatur blanditiis consectetur cumque doloribus excepturi nam quo quos repudiandae ut, voluptatibus.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="use-info-input-box">
+                            <div class="use-info-input-title">
+                                日&nbsp;&nbsp;&nbsp;期
+                            </div>
+                            <div class="use-info-input-main">
+                                <!-- disabled="disabled" -->
+                                <input type="text" placeholder="请选择日期"  id="laydateTest"/>
+                                <span class="rili"></span>
+                            </div>
+                            <div class="use-info-input-msg">
+                                * 请选择日期
+                            </div>
+                        </div>
+                        <div class="use-info-input-box">
+                            <div class="use-info-input-title">
+                                时间段
+                            </div>
+                            <div class="use-info-input-main">
+                                <select name="city" lay-verify="required">
+                                    <option value=""></option>
+                                    <option value="0">北京</option>
+                                    <option value="1">上海</option>
+                                    <option value="2">广州</option>
+                                    <option value="3">深圳</option>
+                                    <option value="4">杭州</option>
+                                    <option value="0">北京</option>
+                                    <option value="1">上海</option>
+                                    <option value="2">广州</option>
+                                    <option value="3">深圳</option>
+                                    <option value="4">杭州</option>
+                                    <option value="0">北京</option>
+                                    <option value="1">上海</option>
+                                    <option value="2">广州</option>
+                                    <option value="3">深圳</option>
+                                    <option value="4">杭州</option>
+                                    <option value="0">北京</option>
+                                    <option value="1">上海</option>
+                                    <option value="2">广州</option>
+                                    <option value="3">深圳</option>
+                                    <option value="4">杭州</option>
+                                    <option value="0">北京</option>
+                                    <option value="1">上海</option>
+                                    <option value="2">广州</option>
+                                    <option value="3">深圳</option>
+                                    <option value="4">杭州</option>
+                                    <option value="0">北京</option>
+                                    <option value="1">上海</option>
+                                    <option value="2">广州</option>
+                                    <option value="3">深圳</option>
+                                    <option value="4">杭州</option>
+                                </select>
+                            </div>
+                            <div class="use-info-input-msg">
+                                * 请选择时间段
+                            </div>
+                        </div>
+                        <div class="use-info-input-box">
+                            <div class="use-info-input-title">
+                                数&nbsp;&nbsp;&nbsp;量
+                            </div>
+                            <div class="use-info-input-main">
+                                <div class="ticket-count-box">
+                                    <div class="ticket-count-btn">
+                                        <span class="jian"></span>
+                                        <input type="number" value="1"/>
+                                        <span class="jia"></span>
+                                    </div>
+                                    <p class="ticket-info">
+                                        （限购数量：<span buy-max>1</span>    剩余：<span ticket-max>1111</span>）
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="use-info-left-box">
+                        <header class="use-info-left-box-title">
+                            购票者信息
+                        </header>
+
+                        <div class="use-info-input-box">
+                            <div class="use-info-input-title">
+                                取票方式
+                            </div>
+                            <div class="use-info-input-main">
+                                <select name="way" lay-verify="required">
+                                    <option value="0">请选择取票方式</option>
+                                    <option value="1">自取</option>
+                                    <option value="2">快递</option>
+                                </select>
+                            </div>
+                            <div class="use-info-input-msg">
+                                * 请选择取票方式
+                            </div>
+                        </div>
+                        <div class="use-info-input-box">
+                            <div class="use-info-input-title">
+                                所在地区
+                            </div>
+                            <div class="use-info-input-main selects" id="distpicker">
+                                <select data-province="" lay-filter="province" id="test01"></select>
+                                <select data-city="" lay-filter="city" id="test02"></select>
+                                <select data-district="" lay-filter="district" id="test03"></select>
+                            </div>
+                            <div class="use-info-input-msg">
+                                * 请选择所在地区
+                            </div>
+                        </div>
+                        <div class="use-info-input-box">
+                            <div class="use-info-input-title">
+                                详细地址
+                            </div>
+                            <div class="use-info-input-main">
+                                <input type="text" placeholder="请填写详细地址"/>
+                            </div>
+                            <div class="use-info-input-msg">
+                                * 请填写详细地址
+                            </div>
+                        </div>
+                        <div class="use-info-input-box">
+                            <div class="use-info-input-title">
+                                姓&nbsp;&nbsp;&nbsp;名
+                            </div>
+                            <div class="use-info-input-main">
+                                <input type="text" placeholder="请填写姓名"/>
+                            </div>
+                            <div class="use-info-input-msg">
+                                * 请填写姓名
+                            </div>
+                        </div>
+                        <div class="use-info-input-box">
+                            <div class="use-info-input-title">
+                                手机号码
+                            </div>
+                            <div class="use-info-input-main get_code">
+                                <input type="text" placeholder="请填写有效手机号"/>
+                                <a class="get_code_btn">
+                                    获取验证码
+                                </a>
+                            </div>
+                            <div class="use-info-input-msg">
+                                * 请填写正确的手机号码
+                            </div>
+                        </div>
+                        <div class="use-info-input-box">
+                            <div class="use-info-input-title">
+                                短信验证码
+                            </div>
+                            <div class="use-info-input-main">
+                                <input type="text" placeholder="请填写手机短信验证码"/>
+                            </div>
+                            <div class="use-info-input-msg">
+                                * 短信验证码有误
+                            </div>
+                        </div>
+                        <div class="use-info-input-box">
+                            <div class="use-info-input-title">
+                                性       别
+                            </div>
+                            <div class="use-info-input-main">
+                                <input type="radio" name="sex" value="男" title="男">
+                                <input type="radio" name="sex" value="女" title="女" checked>
+                            </div>
+                        </div>
+                        <div class="use-info-input-box">
+                            <div class="use-info-input-title">
+                                年       龄
+                            </div>
+                            <div class="use-info-input-main">
+                                <input type="number" placeholder="请填写您的年龄"/>
+                            </div>
+                            <div class="use-info-input-msg">
+                                * 请填写年龄
+                            </div>
+                        </div>
+                        <div class="use-info-input-box">
+                            <div class="use-info-input-title">
+                                图形验证码
+                            </div>
+                            <div class="use-info-input-main get_code">
+                                <input type="text" placeholder="请填写图形验证码"/>
+                                <a class="get_code_btn">
+                                    <img src="images/phone-code.png" alt=""/>
+                                </a>
+                            </div>
+                            <div class="use-info-input-msg">
+                                * 图形验证码有误
+                            </div>
+                        </div>
+                        <div class="use-info-input-box">
+                            <div class="use-info-input-title">
+                                身份证号码
+                            </div>
+                            <div class="use-info-input-main">
+                                <input type="text" placeholder="请填写身份证号码"/>
+                            </div>
+                            <div class="use-info-input-msg">
+                                * 请填写正确的身份证号码
+                            </div>
+                        </div>
+                        <div class="use-info-update">
+                            <p class="use-info-update-title">
+                                请上传身份证正反面照
+                                <span>
+                                    * 请上传身份证正反面照
+                                </span>
+                            </p>
+                            <div class="use-info-update-main">
+                                <div class="use-info-update-img-item upload" id="shen-fen-zheng-upload">
+                                    <img src="images/selected_img.png" alt=""/>
+                                    <input type="hidden" name="shen-fen-zheng"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="use-info-input-box">
+                            <div class="use-info-input-title">
+                                学&nbsp;&nbsp;&nbsp;历
+                            </div>
+                            <div class="use-info-input-main">
+                                <select name="city" lay-verify="required">
+                                    <option value="0">请选择最高学历</option>
+                                </select>
+                            </div>
+                            <div class="use-info-input-msg">
+                                * 请选择最高学历
+                            </div>
+                        </div>
+                        <div class="use-info-input-box">
+                            <div class="use-info-input-title">
+                                公&nbsp;&nbsp;&nbsp;司
+                            </div>
+                            <div class="use-info-input-main">
+                                <input type="text" placeholder="请填写所在公司"/>
+                            </div>
+                            <div class="use-info-input-msg">
+                                * 请填写所在公司名称
+                            </div>
+                        </div>
+                        <div class="use-info-input-box">
+                            <div class="use-info-input-title">
+                                部&nbsp;&nbsp;&nbsp;门
+                            </div>
+                            <div class="use-info-input-main">
+                                <input type="text" placeholder="请填写所在部门"/>
+                            </div>
+                            <div class="use-info-input-msg">
+                                * 请填写所在部门
+                            </div>
+                        </div>
+                        <div class="use-info-input-box">
+                            <div class="use-info-input-title">
+                                职&nbsp;&nbsp;&nbsp;位
+                            </div>
+                            <div class="use-info-input-main">
+                                <input type="text" placeholder="请填写所在职位"/>
+                            </div>
+                            <div class="use-info-input-msg">
+                                * 请填写所在职位
+                            </div>
+                        </div>
+                        <div class="use-info-update">
+                            <p class="use-info-update-title">
+                                请上传本人照片
+                                <span>
+                                    * 请上传本人照片
+                                </span>
+                            </p>
+                            <div class="use-info-update-main">
+                                <div class="use-info-update-img-item upload" id="ben-ren-upload">
+                                    <img src="images/selected_img.png" alt=""/>
+                                    <input type="hidden" name="ben-ren"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="use-info-left-box">
+                        <header class="use-info-left-box-title">
+                            订票须知
+                        </header>
+                        <div class="use-info-warn-box">
+                            <p>1.预订条款的确认 </p>
+                            <p>各项服务的所有权与运作权归景域旅游运营集团所有。本服务条款具有法律约束力。一旦您点选"确认下单"成功</p>
+                            <p>提交订单后，即表示您自愿接受本协议之所有条款，并同意通过喵票订购旅游产品。</p>
+                            <p>2．服务内容</p>
+                            <p>喵票服务的具体内容由景域旅游运营集团根据实际情况提供，喵票对其所提供之服务拥有最终解释权。</p>
+                            <p>3. 特别提示</p>
+                            <p>3.1 预订提前期与付款期：</p>
+                            <p>预订提前期与付款期。景点门票预订：所有订单请提前2天预订，部分支持手机电子票（二维码）的景点，支持当</p>
+                            <p>天预订当天游玩。如需在线支付请在订单生成后1个小时内付清已订产品所有款项。</p>
+                            <p>如未在规定时间内未付清所有款项，喵票将取消产品订单 。</p>
+                            <p>4. 订单生效</p>
+                            <p>订单生效后，您应按订单中约定的时间使用。如您未准时使用，视为您主动解约。</p>
+                            <p class="warn">温馨提示</p>
+                            <p class="warn">1.购票一经确认，即时成交，不可退换；</p>
+                            <p class="warn">2.请仔细填写手机号码，订单付款成功后，兑换码将会以短信形式发送。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="use-info-right">
+                    <div class="use-info-right-buy-msg">
+                        结算信息
+                    </div>
+                    <div class="use-info-right-buy-msg">
+                        <p class="title">商品：深圳出发 澳门纯玩美食观光一日游</p>
+                        <p class="times">2017-12-30 周六  19:00-20:30</p>
+                        <p class="span">澳门一日游元旦双人游 <span class="class-money">￥369 x 2</span></p>
+                    </div>
+                    <div class="use-info-right-buy-msg">
+                        <p class="span">订单金额 <span>￥369</span></p>
+                        <p class="span">运费 <span>+￥12</span></p>
+                    </div>
+                    <div class="use-info-right-buy-msg">
+                        <p class="span">实付金额 <span class="buy-money">￥369</span></p>
+                    </div>
+                </div>
+            </main>
+            <div class="use-info-submit">
+                <div class="use-info-submit-main">
+                    <div class="use-info-submit-msg-check">
+                        <input type="checkbox" name="" title="我已同意以上订票须知条款" lay-skin="primary" checked>
+                    </div>
+                    <a class="use-info-submit-submit">
+                        提交订单
+                    </a>
+                </div>
+            </div>
+        </form>
+        <footer class="comm-footer">
+            <p>
+                技术支持：喵票科技
+            </p>
+        </footer>
+    </div>
+    <script src="lib/layui/layui.js"></script>
+    <script src="lib/distpicker/distpicker.data.js"></script>
+    <script>
+        var json00 = {
+            "date_status": 0,
+            "info": [
+                {
+                    "year": 2018,
+                    "info": [
+                        {
+                            "month": "1",
+                            "date": [
+                                {"date": "20", "status": 1},
+                                {"date": "21", "status": 1},
+                                {"date": "22", "status": 1},
+                                {"date": "23", "status": 1},
+                                {"date": "24", "status": 1},
+                                {"date": "25", "status": 1},
+                                {"date": "26", "status": 1},
+                                {"date": "27", "status": 1}
+                            ]
+                        },
+                        {
+                            "month": "2",
+                            "date": [
+                                {"date": "04", "status": 1},
+                                {"date": "11", "status": 1},
+                                {"date": "18", "status": 1},
+                                {"date": "25", "status": 1}
+                            ]
+                        },
+                        {
+                            "month": "3",
+                            "date": [
+                                {"date": "15", "status": 1},
+                                {"date": "22", "status": 1},
+                                {"date": "23", "status": 1}
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "referer": "",
+            "state": "fail"
+        };
+        var json01 = {
+            "info": {
+                "disable": ["11-11", "12-12", "01-01"],
+                "week": ["0", "5", "6"]
+            },
+            "date_status": 1,
+            "referer": "",
+            "state": "success"
+        };
+        var json02 = {
+            "info": {
+                "disable": [],
+                "date": [
+                    {"date": "1", "status": 1},
+                    {"date": "3", "status": 1},
+                    {"date": "4", "status": 1}
+                ]
+            },
+            "date_status": 2,
+            "referer": "",
+            "state": "success"
+        };
+
+        var date_rule_json = json00;
+
+        layui.config({
+            base: "lib/distpicker/" //根目录
+        }).extend({
+            distpicker:"distpicker"
+        });
+
+        layui.use(['form',"jquery","distpicker","upload","laydate"],function(){
+            var form = layui.form;
+            $ = layui.jquery;
+            var upload = layui.upload;
+            var laydate = layui.laydate;
+            var distpicker = layui.distpicker;
+            distpicker($,ChineseDistricts);
+
+            $('#distpicker').distpicker({
+                province: '请选择省',
+                city: '请选择市',
+                district: '请选择区'
+            });
+            form.render('select',"distpicker");
+
+            form.on('select(province)', function(data){
+                $(data.elem).change();
+                form.render('select',"distpicker");
+            });
+            form.on('select(city)', function(data){
+                $(data.elem).change();
+                form.render('select',"distpicker");
+            });
+
+            $(".use-info-input-main").on("click",".layui-form-select .layui-edge",function(){
+                //$(this).parent().parent().addClass("layui-form-selected");
+                //$(this).prev().click();
+                //console.log($(this).prev());
+            });
+
+            var img_tpl = `<div class="use-info-update-img-item">
+                               <img src="images/selected_img.png" alt=""/>
+                               <input type="hidden" value="" name=""/>
+                               <p class="use-info-update-img-item-del"><i class="layui-icon">&#xe640;</i></p>
+                           </div>`;
+
+            upload.render({
+                elem:"#shen-fen-zheng-upload",
+                done:function(){},
+                error:function(){},
+                before:function(obj){},
+                choose:function(obj){
+                    obj.preview(function(index, file, result){
+                        //var $img_tpl = $(img_tpl);
+                        //$img_tpl.find("img").attr("src",result);
+                        //$img_tpl.find("input").attr("name",'shen_fen_zheng');
+                        //$("#shen-fen-zheng-upload").parent().prepend($img_tpl);
+                        $("#shen-fen-zheng-upload").find("img").attr("src",result);
+                        //$.ajax({
+                            //type:"post",
+                            //url:"/generalf/index.php?g=Asset&m=Asset&a=up_base64",
+                            //data:{img:result},
+                            //success:function(data){
+                                //if(data.status){
+                                    //$('#backimg').val(data.url);
+                                //}
+                            //},
+                            //error:function(){}
+                        //});
+                    });
+                },
+                auto:false
+            });
+
+            upload.render({
+                elem:"#ben-ren-upload",
+                done:function(){},
+                error:function(){},
+                before:function(obj){},
+                choose:function(obj){
+                    obj.preview(function(index, file, result){
+                        $("#ben-ren-upload").find("img").attr("src",result);
+                        //var $img_tpl = $(img_tpl);
+                        //$img_tpl.find("img").attr("src",result);
+                        //$img_tpl.find("input").attr("name",'ben_ren');
+                        //$("#ben-ren-upload").parent().prepend($img_tpl);
+                        //$.ajax({
+                            //type:"post",
+                            //url:"/generalf/index.php?g=Asset&m=Asset&a=up_base64",
+                            //data:{img:result},
+                            //success:function(data){
+                                //if(data.status){
+                                    //$('#backimg').val(data.url);
+                                //}
+                            //},
+                            //error:function(){}
+                        //});
+                    });
+                },
+                auto:false
+            });
+
+            laydate.render({
+                elem: '#laydateTest', //指定元素
+                trigger: 'click'
+            });
+
+        });
+    </script>
+</body>
+</html>

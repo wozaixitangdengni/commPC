@@ -1,0 +1,96 @@
+//声明弹性布局盒子
+.display_flex(){
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+//自动缩放,默认值为1
+.flex(@value){
+  -webkit-box-flex: @value;
+  -webkit-flex: @value;
+  -moz-box-flex: @value;
+  -ms-flex: @value;
+  flex: @value;
+}
+
+//交叉轴中间对其,center
+.align_items(@value){
+  -webkit-box-align: @value;
+  -webkit-align-items: @value;
+  -moz-box-align: @value;
+  -ms-flex-align: @value;
+  align-items: @value;
+}
+
+//主轴中间对其，center
+.justify_content(@value){
+  -webkit-box-pack: @value;
+  -webkit-justify-content: @value;
+  -moz-box-pack: @value;
+  -ms-flex-pack: @value;
+  justify-content: @value;
+}
+.jcs(){
+  -webkit-box-pack: space-between;
+  -webkit-justify-content: space-between;
+  -moz-box-pack: space-between;
+  -ms-flex-pack: space-between;
+  justify-content: space-between;
+}
+
+
+.box_sizing(){
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+
+.width_calc(@value){
+  width: -webkit-calc( ~"100% - @{value}");
+  width: -moz-calc(~"100% - @{value}");
+  width : calc(~"100% - @{value}");
+}
+
+//居中定位
+.position_a(){
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+//倒角
+.border_radius(@value){
+  -webkit-border-radius: @value;
+  border-radius: @value;
+}
+
+
+//文本溢出
+.text_overflow(@value){
+  white-space: normal;
+  -webkit-line-clamp: @value;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+}
+
+
+//统一项目的排列方式
+.flex_direction(){
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -moz-box-orient: vertical;
+  -moz-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
