@@ -34,6 +34,7 @@ body {
   width: 1100px;
   margin: 0 auto;
   padding: 20px 0;
+  padding-bottom: 50px;
 }
 .buy-ticket-status .buy-ticket-item {
   text-align: center;
@@ -949,4 +950,239 @@ input[type="number"] {
 }
 .pay .pay-main .pay-we-chat .pay-we-chat-right .we-chat-pay-msg {
   padding-top: 20px;
+}
+/*区域选择样式*/
+.select-area {
+  padding: 0 45px;
+}
+.select-area .select-area-title {
+  padding: 20px 0;
+  color: #5C5C5C;
+  font-size: 18px;
+  border-bottom: 1px solid #EFEFEF;
+}
+.select-area .select-area-title span {
+  font-size: 14px;
+}
+.select-area .select-area-main {
+  height: 500px;
+  min-height: 500px;
+  padding-top: 20px;
+  position: relative;
+}
+.select-area .select-area-main .select-area-ticket-dcs {
+  width: 205px;
+  box-shadow: 0px 0px 4px 1px #cac4c4;
+  position: absolute;
+  z-index: 3;
+  background-color: #fff;
+}
+.select-area .select-area-main .select-area-ticket-dcs .title {
+  font-size: 18px;
+  color: #686868;
+  padding: 10px 10px 0;
+}
+.select-area .select-area-main .select-area-ticket-dcs .price-list {
+  padding: 0 10px;
+}
+.select-area .select-area-main .select-area-ticket-dcs .price-list li {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: space-between;
+  -webkit-justify-content: space-between;
+  -moz-box-pack: space-between;
+  -ms-flex-pack: space-between;
+  justify-content: space-between;
+  padding: 5px 0;
+}
+.select-area .select-area-main .select-area-ticket-dcs .price-list li p {
+  margin-right: 30px;
+  width: 35px;
+  height: 10px;
+}
+.select-area .select-area-main .select-area-ticket-dcs .price-list li div {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: space-between;
+  -webkit-justify-content: space-between;
+  -moz-box-pack: space-between;
+  -ms-flex-pack: space-between;
+  justify-content: space-between;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -moz-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  color: #6B6B6B;
+  padding-right: 10px;
+}
+.select-area .select-area-main .select-area-ticket-dcs .price-list li div em {
+  font-style: normal;
+  color: #E55D44;
+}
+.select-area .select-area-main .select-area-ticket-dcs .area-min {
+  border-bottom: 1px solid #EEEEEE;
+}
+.select-area .select-area-main .select-area-area {
+  height: 100%;
+  min-height: 100%;
+  position: relative;
+}
+.select-area .select-area-main .select-area-area:before {
+  content: "";
+  display: table;
+}
+.select-area .select-area-main .select-area-area .set_scale_box {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: flex-end;
+  -webkit-align-items: flex-end;
+  -moz-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+  -webkit-box-pack: flex-end;
+  -webkit-justify-content: flex-end;
+  -moz-box-pack: flex-end;
+  -ms-flex-pack: flex-end;
+  justify-content: flex-end;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 2;
+}
+.select-area .select-area-main .select-area-area .set_scale_box a {
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  border: 1px solid #EEEEEE;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-size: cover;
+}
+.select-area .select-area-main .select-area-area .set_scale_box a:not(:last-child) {
+  margin-right: 10px;
+}
+.select-area .select-area-main .select-area-area .set_scale_box .scale_max {
+  background-image: url(../images/scale_max.png);
+}
+.select-area .select-area-main .select-area-area .set_scale_box .scale_min {
+  background-image: url(../images/scale_min.png);
+}
+.select-area .select-area-main .select-area-area .selected_seat {
+  width: 180px;
+  box-shadow: 0px 0px 4px 1px #cac4c4;
+  background-color: #fff;
+  padding-bottom: 20px;
+  min-height: 400px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 2;
+  display: none;
+}
+.select-area .select-area-main .select-area-area .selected_seat .title {
+  color: #333333;
+  padding: 10px 0;
+  text-align: center;
+  font-size: 14px;
+  background-color: #F1F0F0;
+}
+.select-area .select-area-main .select-area-area .selected_seat .title span {
+  color: #EB2727;
+  display: inline-block;
+  margin-left: 10px;
+}
+.select-area .select-area-main .select-area-area .selected_seat .submit_order {
+  width: 156px;
+  height: 38px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  line-height: 38px;
+  text-align: center;
+  color: #fff;
+  background-color: #EB6100;
+  margin: 20px auto 0;
+  display: block;
+}
+.select-area .select-area-main .select-area-area .selected_seat .seat_list {
+  height: 380px;
+  overflow: hidden;
+  overflow-y: auto;
+}
+.select-area .select-area-main .select-area-area .selected_seat .seat_list li {
+  border-bottom: 1px solid #F0F0F0;
+  padding: 0 10px;
+}
+.select-area .select-area-main .select-area-area .selected_seat .seat_list li:hover i {
+  background-image: url(../images/trash-active.png);
+}
+.select-area .select-area-main .select-area-area .selected_seat .seat_list li div {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 10px 0;
+}
+.select-area .select-area-main .select-area-area .selected_seat .seat_list li div img {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+.select-area .select-area-main .select-area-area .selected_seat .seat_list li div span {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -moz-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+.select-area .select-area-main .select-area-area .selected_seat .seat_list li div i {
+  width: 15px;
+  height: 15px;
+  background-image: url(../images/trash.png);
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  cursor: pointer;
+}
+.select-area .select-area-main .select-area-area .selected_seat .seat_list li p {
+  padding-bottom: 10px;
+}
+.select-area .select-area-main .select-area-area .selected_seat .seat_list li p span {
+  display: inline-block;
+  width: 80px;
+}
+.select-area .select-area-main .select-area-area .seat_main {
+  min-height: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 1;
 }

@@ -1,0 +1,130 @@
+@import "style";
+
+.i_header{
+  width: 100%;
+  height: 760px;
+  overflow: hidden;
+  position: relative;
+  .bg_img{
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    max-width: 100%;
+    left:50%;
+    -webkit-transform: translate(-50%, 0);
+    -moz-transform: translate(-50%, 0);
+    -ms-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
+  }
+  //background: url(../images/index_banner01.png) no-repeat;
+  background-size: 100%;
+  background-position: center center;
+  .navbar{
+    width: 100%;
+    background: rgba(255,255,255,.3);
+    .top_wrap{
+      width: 1200px;
+      height: 94px;
+      margin: 0 auto;
+      .display_flex();
+      .justify_content(space-between);
+      .crumb_bread{
+        .display_flex();
+        li{
+          .box_sizing();
+          height: 100%;
+          width: 100px;
+          &.on{
+            background: #0073AA;
+          }
+          a{
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            line-height: 94px;
+            color: #ffffff;
+          }
+        }
+      }
+      .index_logo{
+        color:#206396;
+        line-height: 94px;
+        img{
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+  .i_banner_text01{
+    .position_a();
+    width: 870px;
+    height: 180px;
+    .display_flex();
+    .justify_content(center);
+    .align_items(center);
+    background: rgba(255,255,255,.6);
+  }
+}
+
+/*项目公共样式*/
+.items_wrap{
+  display: inline-block;
+  padding:10px 15px;
+  border:1px solid #009FD9;
+  .box_sizing();
+  height: 114px;
+  font-size: 32px;
+  font-weight: 800;
+  position: relative;
+  .item_name_english{
+    letter-spacing:5px;
+    color:#D5D5D5;
+    font-weight: 800;
+    //font-size: 32px;
+  }
+  .item_name_chinese{
+    font-size: 22px;
+  }
+  .item_icon{
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    font-style: normal;
+    font-size: 25px;
+    border: 1px solid #009FD9;
+    line-height: 20px;
+    color:#009FD9;
+  }
+}
+
+.section{
+  width: 1200px;
+  margin:30px auto;
+  .s_header{
+    .display_flex();
+    .new_det_box{
+      .flex(1);
+      background: #F5F5F5;
+      padding:20px 10px 15px 20px;
+      .new_title{
+        color:#000;
+        font-weight: 800;
+        font-size: 16px;
+        span{
+          background: #009FD9;
+           color:#fff;
+          padding:0 3px;
+          font-size: 13px;
+        }
+      }
+      .new_det{
+        color:#7E7E7E;
+        margin-top:15px;
+        .text_overflow(2);
+        font-size: 14px;
+        line-height: 20px;
+      }
+    }
+  }
+}

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <link rel="stylesheet" href="__TMPL__Public/movies/shenzhen/css/reset.css"/>
+    <link rel="stylesheet" href="__TMPL__Public/movies/shenzhen/css/shenZhen.css"/>
+    <style>
+        #add_place{
+            max-width: 320px !important;
+            height: 568px !important;
+        }
+        html{
+            font-size: 20px !important;
+        }
+    </style>
+</head>
+<body>
+    <div id="shenZhenFontSize"></div>
+    <div class="container">
+        <header class="title seat_header">
+            {:date_season($info['showtime'],$info['title'])}
+        </header>
+        <div class="seat-main">
+            <!-- 外层座位-->
+            <div class="seatlink wrap-seat200"><a data-id="7_a" href="{:U('Movies/seat',array('id'=>7,'season_id'=>$season_id))}" data-nid="7"></a></div>
+            <div class="seatlink wrap-seat201"><a data-id="7_b" href="{:U('Movies/seat',array('id'=>7,'season_id'=>$season_id))}" data-nid="7"></a></div>
+            <div class="seatlink wrap-seat202"><a data-id="7_c" href="{:U('Movies/seat',array('id'=>7,'season_id'=>$season_id))}" data-nid="7"></a></div>
+            <div class="seatlink wrap-seat203"><a data-id="7_d" href="{:U('Movies/seat',array('id'=>7,'season_id'=>$season_id))}" data-nid="7"></a></div>
+            <div class="seatlink wrap-seat204"><a data-id="7_e" href="{:U('Movies/seat',array('id'=>7,'season_id'=>$season_id))}" data-nid="7"></a></div>
+            <div class="seatlink wrap-seat205"><a data-id="7_f" href="{:U('Movies/seat',array('id'=>7,'season_id'=>$season_id))}" data-nid="7"></a></div>
+            <div class="seatlink wrap-seat206"><a data-id="7_g" href="{:U('Movies/seat',array('id'=>7,'season_id'=>$season_id))}" data-nid="7"></a></div>
+            <!-- 内层座位-->
+            <div class="seatlink wrap-seat101"><a data-id="7_h" href="{:U('Movies/seat',array('id'=>7,'season_id'=>$season_id))}" data-nid="7"></a></div>
+            <div class="seatlink wrap-seat102"><a data-id="7_i" href="{:U('Movies/seat',array('id'=>7,'season_id'=>$season_id))}" data-nid="7"></a></div>
+            <div class="seatlink wrap-seat103"><a data-id="7_j" href="{:U('Movies/seat',array('id'=>7,'season_id'=>$season_id))}" data-nid="7"></a></div>
+            <div class="seatlink wrap-seat104"><a data-id="7_k" href="{:U('Movies/seat',array('id'=>7,'season_id'=>$season_id))}" data-nid="7"></a></div>
+            <div class="seatlink wrap-seat105"><a data-id="7_l" href="{:U('Movies/seat',array('id'=>7,'season_id'=>$season_id))}" data-nid="7"></a></div>
+            <div class="seatlink wrap-seat106"><a data-id="7_m" href="{:U('Movies/seat',array('id'=>7,'season_id'=>$season_id))}" data-nid="7"></a></div>
+            <!-- 座位号-->
+            <div class="door door1"></div>
+            <div class="door door2"></div>
+            <div class="door door3"></div>
+            <div class="door door4"></div>
+            <div class="door door5"></div>
+            <div class="door door6"></div>
+            <div class="door door7"></div>
+            <div class="door door8"></div>
+            <!-- 内层过道-->
+            <div class="door guodao-102-101"></div>
+            <div class="door guodao-101-103"></div>
+            <div class="door guodao-103-105"></div>
+            <div class="door guodao-102-104"></div>
+            <div class="door guodao-104-106"></div>
+            <!-- 舞台-->
+            <div class="stage"></div>
+        </div>
+        <div class="seat-price">
+            <foreach name="prices" item="v">
+                <div class="seat-price-item"><i style="background-color: {$v.color};"></i><span>{$v.price}</span></div>
+            </foreach>
+
+            <!--<div class="seat-price-item"><i style="background-color: red"></i><span>1888</span></div>-->
+        </div>
+    </div>
+
+    <script src="__TMPL__Public/movies/shenzhen/js/font_size.js"></script>
+    <script src="__TMPL__Public/movies/shenzhen/js/jquery-1.11.3.js"></script>
+    <script>
+        document.body.addEventListener('touchstart', function () {});
+        var u = navigator.userAgent;
+        var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
+        var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+        //alert('是否是Android：'+isAndroid);
+        //alert('是否是iOS：'+isiOS);
+        if(isAndroid){
+            //安卓系统
+            $(".wrap-seat106").addClass("on");
+            $(".wrap-seat105").addClass("on");
+            $(".guodao-103-105").addClass("on");
+            $(".guodao-104-106").addClass("on");
+            $(".door5").addClass("on");
+            $(".door6").addClass("on");
+        }
+
+    </script>
+</body>
+</html>

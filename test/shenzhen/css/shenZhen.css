@@ -1,0 +1,442 @@
+.container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.container .title {
+  background-color: #F5F5FB;
+  font-size: .8rem;
+  line-height: 1.7rem;
+  height: 1.7rem;
+  text-align: center;
+  color: #39393A;
+  margin-bottom: 2.5rem;
+  position: relative;
+  z-index: 10;
+}
+.container .seat-main {
+  position: relative;
+  padding-top: 4.2rem;
+  margin-top: -4.2rem;
+  z-index: 5;
+  height: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding-bottom: 4rem;
+  margin-bottom: -4rem;
+}
+.container .seat-main .seatlink {
+  position: absolute;
+  z-index: 6;
+}
+.container .seat-main .seatlink a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.container .seat-main .wrap-seat200 {
+  width: 4.6rem;
+  height: 2.9rem;
+  left: 50%;
+  -webkit-transform: translate(-50%, 36%);
+  -moz-transform: translate(-50%, 36%);
+  -ms-transform: translate(-50%, 36%);
+  transform: translate(-50%, 36%);
+}
+.container .seat-main .wrap-seat200 a {
+  background-image: url(../images/200_n.png);
+}
+.container .seat-main .wrap-seat200 a:active {
+  background-image: url(../images/200_a.png);
+}
+.container .seat-main .wrap-seat201 {
+  width: 4rem;
+  height: 3.8rem;
+  left: 50%;
+  -webkit-transform: translate(44%, 40%) rotate(-1deg);
+  -moz-transform: translate(44%, 40%) rotate(-1deg);
+  -ms-transform: translate(44%, 40%) rotate(-1deg);
+  transform: translate(44%, 40%) rotate(-1deg);
+}
+.container .seat-main .wrap-seat201 a {
+  background-image: url(../images/201_n.png);
+}
+.container .seat-main .wrap-seat201 a:active {
+  background-image: url(../images/201_a.png);
+}
+.container .seat-main .wrap-seat202 {
+  width: 4rem;
+  height: 3.8rem;
+  left: 50%;
+  -webkit-transform: translate(-140%, 39%) rotate(2deg);
+  -moz-transform: translate(-140%, 39%) rotate(2deg);
+  -ms-transform: translate(-140%, 39%) rotate(2deg);
+  transform: translate(-140%, 39%) rotate(2deg);
+}
+.container .seat-main .wrap-seat202 a {
+  background-image: url(../images/202_n.png);
+}
+.container .seat-main .wrap-seat202 a:active {
+  background-image: url(../images/202_a.png);
+}
+.container .seat-main .wrap-seat203 {
+  width: 3.3rem;
+  height: 3.7rem;
+  left: 50%;
+  -webkit-transform: translate(117%, 114%) rotate(-8deg);
+  -moz-transform: translate(117%, 114%) rotate(-8deg);
+  -ms-transform: translate(117%, 114%) rotate(-8deg);
+  transform: translate(117%, 114%) rotate(-8deg);
+}
+.container .seat-main .wrap-seat203 a {
+  background-image: url(../images/203_n.png);
+}
+.container .seat-main .wrap-seat203 a:active {
+  background-image: url(../images/203_a.png);
+}
+.container .seat-main .wrap-seat204 {
+  width: 3.3rem;
+  height: 3.7rem;
+  left: 50%;
+  -webkit-transform: translate(-208%, 110%) rotate(6deg);
+  -moz-transform: translate(-208%, 110%) rotate(6deg);
+  -ms-transform: translate(-208%, 110%) rotate(6deg);
+  transform: translate(-208%, 110%) rotate(6deg);
+}
+.container .seat-main .wrap-seat204 a {
+  background-image: url(../images/204_n.png);
+}
+.container .seat-main .wrap-seat204 a:active {
+  background-image: url(../images/204_a.png);
+}
+.container .seat-main .wrap-seat205 {
+  width: 3.5rem;
+  height: 3.8rem;
+  left: 50%;
+  -webkit-transform: translate(119%, 212%) rotate(-8deg);
+  -moz-transform: translate(119%, 212%) rotate(-8deg);
+  -ms-transform: translate(119%, 212%) rotate(-8deg);
+  transform: translate(119%, 212%) rotate(-8deg);
+}
+.container .seat-main .wrap-seat205 a {
+  background-image: url(../images/205_n.png);
+}
+.container .seat-main .wrap-seat205 a:active {
+  background-image: url(../images/205_a.png);
+}
+.container .seat-main .wrap-seat206 {
+  width: 3.5rem;
+  height: 3.8rem;
+  left: 50%;
+  -webkit-transform: translate(-213%, 206%) rotate(8deg);
+  -moz-transform: translate(-213%, 206%) rotate(8deg);
+  -ms-transform: translate(-213%, 206%) rotate(8deg);
+  transform: translate(-213%, 206%) rotate(8deg);
+}
+.container .seat-main .wrap-seat206 a {
+  background-image: url(../images/206_n.png);
+}
+.container .seat-main .wrap-seat206 a:active {
+  background-image: url(../images/206_a.png);
+}
+.container .seat-main .wrap-seat101 {
+  width: 3.4rem;
+  height: 3.5rem;
+  left: 50%;
+  -webkit-transform: translate(2%, 118%);
+  -moz-transform: translate(2%, 118%);
+  -ms-transform: translate(2%, 118%);
+  transform: translate(2%, 118%);
+}
+.container .seat-main .wrap-seat101 a {
+  background-image: url(../images/101_n.png);
+}
+.container .seat-main .wrap-seat101 a:active {
+  background-image: url(../images/101_a.png);
+}
+.container .seat-main .wrap-seat102 {
+  width: 3.4rem;
+  height: 3.5rem;
+  left: 50%;
+  -webkit-transform: translate(-101%, 118%);
+  -moz-transform: translate(-101%, 118%);
+  -ms-transform: translate(-101%, 118%);
+  transform: translate(-101%, 118%);
+}
+.container .seat-main .wrap-seat102 a {
+  background-image: url(../images/102_n.png);
+}
+.container .seat-main .wrap-seat102 a:active {
+  background-image: url(../images/102_a.png);
+}
+.container .seat-main .wrap-seat103 {
+  width: 2.9rem;
+  height: 5.4rem;
+  left: 50%;
+  -webkit-transform: translate(54%, 112%);
+  -moz-transform: translate(54%, 112%);
+  -ms-transform: translate(54%, 112%);
+  transform: translate(54%, 112%);
+}
+.container .seat-main .wrap-seat103 a {
+  background-image: url(../images/103_n.png);
+}
+.container .seat-main .wrap-seat103 a:active {
+  background-image: url(../images/103_a.png);
+}
+.container .seat-main .wrap-seat104 {
+  width: 2.9rem;
+  height: 5.1rem;
+  left: 50%;
+  -webkit-transform: translate(-147%, 119%);
+  -moz-transform: translate(-147%, 119%);
+  -ms-transform: translate(-147%, 119%);
+  transform: translate(-147%, 119%);
+}
+.container .seat-main .wrap-seat104 a {
+  background-image: url(../images/104_n.png);
+}
+.container .seat-main .wrap-seat104 a:active {
+  background-image: url(../images/104_a.png);
+}
+.container .seat-main .wrap-seat105 {
+  width: 1.975rem;
+  height: 1.5rem;
+  left: 50%;
+  -webkit-transform: translate(112%, 735%);
+  -moz-transform: translate(112%, 735%);
+  -ms-transform: translate(112%, 735%);
+  transform: translate(112%, 735%);
+}
+.container .seat-main .wrap-seat105.on {
+  -webkit-transform: translate(112%, 745%);
+  -moz-transform: translate(112%, 745%);
+  -ms-transform: translate(112%, 745%);
+  transform: translate(112%, 745%);
+}
+.container .seat-main .wrap-seat105 a {
+  background-image: url(../images/105_n.png);
+}
+.container .seat-main .wrap-seat105 a:active {
+  background-image: url(../images/105_a.png);
+}
+.container .seat-main .wrap-seat106 {
+  width: 2rem;
+  height: 1.5rem;
+  left: 50%;
+  -webkit-transform: translate(-189%, 728%);
+  -moz-transform: translate(-189%, 728%);
+  -ms-transform: translate(-189%, 728%);
+  transform: translate(-189%, 728%);
+}
+.container .seat-main .wrap-seat106.on {
+  -webkit-transform: translate(-189%, 740%);
+  -moz-transform: translate(-189%, 740%);
+  -ms-transform: translate(-189%, 740%);
+  transform: translate(-189%, 740%);
+}
+.container .seat-main .wrap-seat106 a {
+  background-image: url(../images/106_n.png);
+}
+.container .seat-main .wrap-seat106 a:active {
+  background-image: url(../images/106_a.png);
+}
+.container .seat-main .door {
+  position: absolute;
+  z-index: 4;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.container .seat-main .door.door1 {
+  width: 1.5rem;
+  height: 3.2rem;
+  left: 50%;
+  -webkit-transform: translate(111%, 26%);
+  -moz-transform: translate(111%, 26%);
+  -ms-transform: translate(111%, 26%);
+  transform: translate(111%, 26%);
+  background-image: url(../images/door1.png);
+}
+.container .seat-main .door.door2 {
+  width: 1.5rem;
+  height: 3.2rem;
+  left: 50%;
+  -webkit-transform: translate(-205%, 27%);
+  -moz-transform: translate(-205%, 27%);
+  -ms-transform: translate(-205%, 27%);
+  transform: translate(-205%, 27%);
+  background-image: url(../images/door2.png);
+}
+.container .seat-main .door.door3 {
+  width: 3rem;
+  height: 3rem;
+  left: 50%;
+  -webkit-transform: translate(125%, 102%) rotate(-4deg);
+  -moz-transform: translate(125%, 102%) rotate(-4deg);
+  -ms-transform: translate(125%, 102%) rotate(-4deg);
+  transform: translate(125%, 102%) rotate(-4deg);
+  background-image: url(../images/door3.png);
+}
+.container .seat-main .door.door4 {
+  width: 3rem;
+  height: 3rem;
+  left: 50%;
+  -webkit-transform: translate(-220%, 100%) rotate(5deg);
+  -moz-transform: translate(-220%, 100%) rotate(5deg);
+  -ms-transform: translate(-220%, 100%) rotate(5deg);
+  transform: translate(-220%, 100%) rotate(5deg);
+  background-image: url(../images/door4.png);
+}
+.container .seat-main .door.door5 {
+  width: 3.3rem;
+  height: 1rem;
+  left: 50%;
+  -webkit-transform: translate(142%, 765%) rotate(-8deg);
+  -moz-transform: translate(142%, 765%) rotate(-8deg);
+  -ms-transform: translate(142%, 765%) rotate(-8deg);
+  transform: translate(142%, 765%) rotate(-8deg);
+  background-image: url(../images/door5.png);
+}
+.container .seat-main .door.door5.on {
+  -webkit-transform: translate(142%, 775%) rotate(-8deg);
+  -moz-transform: translate(142%, 775%) rotate(-8deg);
+  -ms-transform: translate(142%, 775%) rotate(-8deg);
+  transform: translate(142%, 775%) rotate(-8deg);
+}
+.container .seat-main .door.door6 {
+  width: 3.3rem;
+  height: 1rem;
+  left: 50%;
+  -webkit-transform: translate(-239%, 750%) rotate(8deg);
+  -moz-transform: translate(-239%, 750%) rotate(8deg);
+  -ms-transform: translate(-239%, 750%) rotate(8deg);
+  transform: translate(-239%, 748%) rotate(8deg);
+  background-image: url(../images/door6.png);
+}
+.container .seat-main .door.door6.on {
+  -webkit-transform: translate(-239%, 760%) rotate(8deg);
+  -moz-transform: translate(-239%, 760%) rotate(8deg);
+  -ms-transform: translate(-239%, 760%) rotate(8deg);
+  transform: translate(-239%, 760%) rotate(8deg);
+}
+.container .seat-main .door.door7 {
+  width: 3rem;
+  height: 3rem;
+  left: 50%;
+  -webkit-transform: translate(149%, 357%) rotate(-8deg);
+  -moz-transform: translate(149%, 357%) rotate(-8deg);
+  -ms-transform: translate(149%, 357%) rotate(-8deg);
+  transform: translate(149%, 357%) rotate(-8deg);
+  background-image: url(../images/door7.png);
+}
+.container .seat-main .door.door8 {
+  width: 3rem;
+  height: 3rem;
+  left: 50%;
+  -webkit-transform: translate(-243%, 347%) rotate(8deg);
+  -moz-transform: translate(-243%, 347%) rotate(8deg);
+  -ms-transform: translate(-243%, 347%) rotate(8deg);
+  transform: translate(-243%, 347%) rotate(8deg);
+  background-image: url(../images/door8.png);
+}
+.container .seat-main .door.guodao-102-101 {
+  width: 0.4rem;
+  height: 2.1rem;
+  left: 50%;
+  -webkit-transform: translate(-19%, 200%);
+  -moz-transform: translate(-19%, 200%);
+  -ms-transform: translate(-19%, 200%);
+  transform: translate(-19%, 200%);
+  background-image: url(../images/guodao_102_101.png);
+}
+.container .seat-main .door.guodao-101-103 {
+  width: 1.8rem;
+  height: 1.5rem;
+  left: 50%;
+  -webkit-transform: translate(96%, 401%);
+  -moz-transform: translate(96%, 401%);
+  -ms-transform: translate(96%, 401%);
+  transform: translate(96%, 401%);
+  background-image: url(../images/guodao_101_103.png);
+}
+.container .seat-main .door.guodao-103-105 {
+  width: 1.8rem;
+  height: 1.5rem;
+  left: 50%;
+  -webkit-transform: translate(87%, 675%);
+  -moz-transform: translate(87%, 675%);
+  -ms-transform: translate(87%, 675%);
+  transform: translate(87%, 675%);
+  background-image: url(../images/guodao_103_105.png);
+}
+.container .seat-main .door.guodao-103-105.on {
+  -webkit-transform: translate(87%, 685%);
+  -moz-transform: translate(87%, 685%);
+  -ms-transform: translate(87%, 685%);
+  transform: translate(87%, 685%);
+}
+.container .seat-main .door.guodao-102-104 {
+  width: 1.8rem;
+  height: 1.5rem;
+  left: 50%;
+  -webkit-transform: translate(-195%, 399%);
+  -moz-transform: translate(-195%, 399%);
+  -ms-transform: translate(-195%, 399%);
+  transform: translate(-195%, 399%);
+  background-image: url(../images/guodao_102_104.png);
+}
+.container .seat-main .door.guodao-104-106 {
+  width: 1.8rem;
+  height: 1.5rem;
+  left: 50%;
+  -webkit-transform: translate(-183%, 665%);
+  -moz-transform: translate(-183%, 665%);
+  -ms-transform: translate(-183%, 665%);
+  transform: translate(-183%, 665%);
+  background-image: url(../images/guodao_104_106.png);
+}
+.container .seat-main .door.guodao-104-106.on {
+  -webkit-transform: translate(-183%, 675%);
+  -moz-transform: translate(-183%, 675%);
+  -ms-transform: translate(-183%, 675%);
+  transform: translate(-183%, 675%);
+}
+.container .seat-main .stage {
+  position: absolute;
+  z-index: 4;
+  width: 6rem;
+  height: 7rem;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url(../images/stage.png);
+  left: 50%;
+  -webkit-transform: translate(-48%, 94%);
+  -moz-transform: translate(-48%, 94%);
+  -ms-transform: translate(-48%, 94%);
+  transform: translate(-48%, 94%);
+}
+.container .seat-price {
+  position: relative;
+  z-index: 6;
+  padding: 0 .5rem;
+}
+.container .seat-price .seat-price-item {
+  display: inline-block;
+  margin-left: -1px;
+  line-height: normal;
+  margin-right: .5rem;
+}
+.container .seat-price .seat-price-item i {
+  display: inline-block;
+  width: .8rem;
+  height: .8rem;
+  margin-right: .2rem;
+  vertical-align: middle;
+}
+.container .seat-price .seat-price-item span {
+  font-size: .7rem;
+  vertical-align: middle;
+}

@@ -35,6 +35,7 @@ html,body{
   .jcs();
   .marget-1100();
   padding: 20px 0;
+  padding-bottom: 50px;
   .buy-ticket-item{
     text-align: center;
     .flex(1);
@@ -762,6 +763,197 @@ input[type="number"]{-moz-appearance:textfield;}
     }
   }
 }
+
+/*区域选择样式*/
+.select-area{
+  padding: 0 45px;
+  .select-area-title{
+    padding: 20px 0;
+    color:#5C5C5C;
+    font-size: 18px;
+    border-bottom: 1px solid #EFEFEF;
+    span{
+      font-size: 14px;
+    }
+  }
+  .select-area-main{
+    height: 500px;
+    min-height: 500px;
+    padding-top: 20px;
+    position: relative;
+    .select-area-ticket-dcs{
+      width: 205px;
+      box-shadow: 0px 0px 4px 1px #cac4c4;
+      //padding: 10px;
+      position: absolute;
+      z-index: 3;
+      background-color: #fff;
+      .title{
+        font-size: 18px;
+        color:#686868;
+        padding: 10px 10px 0;
+      }
+      .price-list{
+        padding: 0 10px;
+        li{
+          .display_flex();
+          .align_items(center);
+          .jcs();
+          padding: 5px 0;
+          p{
+            margin-right: 30px;
+            width: 35px;
+            height: 10px;
+          }
+          div{
+            .display_flex();
+            .align_items(center);
+            .jcs();
+            .flex(1);
+            color:#6B6B6B;
+            padding-right: 10px;
+            em{
+              font-style: normal;
+              color:#E55D44;
+            }
+          }
+        }
+      }
+      .area-min{
+        border-bottom: 1px solid #EEEEEE;
+      }
+    }
+    .select-area-area{
+      height: 100%;
+      min-height: 100%;
+      position: relative;
+      &:before{
+        content: "";
+        display: table;
+        //clear:both;
+      }
+      .set_scale_box{
+        .display_flex();
+        .align_items(flex-end);
+        .justify_content(flex-end);
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: 2;
+        a{
+          width: 30px;
+          height: 30px;
+          display: inline-block;
+          border:1px solid #EEEEEE;
+          background-repeat: no-repeat;
+          background-position: 50%;
+          background-size: cover;
+          &:not(:last-child){
+            margin-right: 10px;
+          }
+        }
+        .scale_max{
+          background-image: url(../images/scale_max.png);
+        }
+        .scale_min{
+          background-image: url(../images/scale_min.png);
+        }
+      }
+      .selected_seat{
+        width: 180px;
+        box-shadow: 0px 0px 4px 1px #cac4c4;
+        background-color: #fff;
+        padding-bottom: 20px;
+        min-height: 400px;
+        overflow-x: hidden;
+        overflow-y: auto;
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: 2;
+        display: none;
+        .title{
+          color:#333333;
+          padding: 10px 0;
+          text-align: center;
+          font-size: 14px;
+          background-color: #F1F0F0;
+          span{
+            color:#EB2727;
+            display: inline-block;
+            margin-left: 10px;
+          }
+        }
+        .submit_order{
+          width: 156px;
+          height: 38px;
+          .border_radius(5px);
+          line-height: 38px;
+          text-align: center;
+          color:#fff;
+          background-color: #EB6100;
+          margin: 20px auto 0;
+          display: block;
+        }
+        .seat_list{
+          //max-height: 380px;
+          //min-height: 200px;
+          height: 380px;
+          overflow: hidden;
+          overflow-y: auto;
+          li{
+            border-bottom: 1px solid #F0F0F0;
+            padding: 0 10px;
+            &:hover{
+              i{
+                background-image: url(../images/trash-active.png);
+              }
+            }
+            div{
+              .display_flex();
+              .align_items(center);
+              padding: 10px 0;
+              img{
+                width: 20px;
+                height: 20px;
+                margin-right: 10px;
+              }
+              span{
+                .flex(1);
+              }
+              i{
+                width: 15px;
+                height: 15px;
+                background-image: url(../images/trash.png);
+                background-position: 50%;
+                background-repeat: no-repeat;
+                background-size: cover;
+                cursor:pointer;
+              }
+            }
+            p{
+              padding-bottom: 10px;
+              span{
+                display: inline-block;
+                width: 80px;
+              }
+            }
+          }
+        }
+      }
+      .seat_main{
+        min-height: 100%;
+        //padding-top: 32px;
+        //margin-top:-32px;
+        .box_sizing();
+        position: relative;
+        z-index: 1;
+      }
+    }
+  }
+}
+
+
 
 
 

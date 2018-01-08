@@ -1,0 +1,92 @@
+div.model{
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: -100000;
+  opacity:0;
+
+  //过度效果
+  transition: opacity 0.5s;
+  -moz-transition: opacity 0.5s; /* Firefox 4 */
+  -webkit-transition: opacity 0.5s; /* Safari 和 Chrome */
+  -o-transition: opacity 0.5s; /* Opera */
+}
+div.model>div.model-err-box{
+  //套用样式
+  position: fixed;
+  z-index: 5000;
+  width: 80%;
+  max-width: 300px;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  background-color: #FFFFFF;
+  text-align: center;
+  border-radius: 3px;
+  overflow: hidden;
+  //过度效果
+  transition: opacity 2s;
+  -moz-transition: opacity 2s; /* Firefox 4 */
+  -webkit-transition: opacity 2s; /* Safari 和 Chrome */
+  -o-transition: opacity 2s; /* Opera */
+
+  >div.weui-dialog__bd{
+    padding: 2.7em 20px 1.7em;
+    color: #353535;
+    min-height: 40px;
+    font-size: 15px;
+    line-height: 1.3;
+    word-wrap: break-word;
+    word-break: break-all;
+  }
+  >div.weui-dialog__ft{
+    color: #40C240;
+    display: block;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    flex: 1;
+    text-decoration: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    position: relative;
+    line-height: 48px;
+    font-size: 18px;
+  }
+}
+
+//div.model>div.model-err-box >span{
+//  position: absolute;
+//  left:50%;
+//  top:50%;
+//  transform:translate(-50%,-50%);
+//}
+
+section.affirm{
+  display: none;
+}
+
+section.affirm > h3{
+  margin:5px 0;
+}
+
+section.affirm > h3 >a{
+  float:right;
+}
+
+section.affirm > ul em{
+  font-style: normal;
+}
+
+h3 > a.affirmClose{
+  color:#39CB6A;
+}
+
+section.affirm > ul li{
+  margin:5px 0;
+}
+
+

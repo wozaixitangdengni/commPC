@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>{$name} 座位</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="__TMPL__Public/movies/wenhua/css/reset.css" />
+    <link rel="stylesheet" href="__TMPL__Public/movies/wenhua/css/seat.css" />
+</head>
+<body>
+<header class="seat_header">
+    <p>{:date_season($info['showtime'],$info['title'])}</p>
+</header>
+<section class="seat_main">
+    <div class="container">
+        <div class="title"></div>
+
+        <!--一层-->
+        <div class="box_main box_main1">
+            <div class="desc">舞台演区</div>
+
+
+           <div class="seat_box">
+               <!--西区-->
+               <div class="seatlink zwleft">
+                   <p class="txt">西区</p>
+                   <a data-id="4_a" href="{:U('Movies/seat',array('id'=>4,'season_id'=>$season_id))}" data-nid="4"></a>
+               </div>
+               <!--东区-->
+               <div class="seatlink zwright">
+                   <p class="txt">东区</p>
+
+                   <a data-id="4_b" href="{:U('Movies/seat',array('id'=>4,'season_id'=>$season_id))}" data-nid="4"></a>
+               </div>
+
+           </div>
+        </div>
+        <style>
+            html,body{margin: 0;padding: 0}
+            .p-wrap{
+                padding-top: 10px;
+            }
+            .p-wrap .p-title{
+                font-size: 14px;
+                border-bottom: 1px solid #e1e1e1;
+                border-top: 1px solid #e1e1e1;
+                padding: 5px 10px;
+                color:#000;
+                margin: 0;
+            }
+            .p-wrap .p-title i{
+                color:#989898;
+                display: inline-block;
+                float: right;
+                width: 15px;
+                height: 17px;
+                background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAIZJREFUeNpi3LptmwIDEHh7eT1goADAzGEC4vlAfB4oYECBYQlA6j4Q14MMLISK7yfHUKhhIEd9AOKJjFBBkEH7oWocgd6/QIZhYH2MSJIkGYrNMJA4I5oiogzFZRiGgcQYis8wrAbiM5SQYTgNxGYoEBsQMgyvgVgMFSBkGEEDyYl9gAADAPIxXw9oxnz5AAAAAElFTkSuQmCC) no-repeat center;
+            }
+            .p-wrap .p-title i.on{
+                transform: rotate(180deg);
+            }
+            .p-wrap .p-main{
+                margin: 10px 0;
+            }
+            .p-wrap .p-main div{
+                display: inline-block;
+                padding: 0 10px;
+                color:#000;
+                font-size: 13px;
+                width: 105px;
+                box-sizing: border-box;
+            }
+            .p-wrap .p-main div span{
+                display: inline-block;
+                height: 10px;
+                width: 20px;
+                margin-right: 5px;
+            }
+        </style>
+        <div class="p-wrap">
+            <p class="p-title">票价说明： <i></i></p>
+            <div class="p-main">
+                <foreach name="prices" item="v">
+                    <div><span style="background-color: {$v.color};"></span>￥{$v.price}</div>
+                </foreach>
+            </div>
+        </div>
+        <script type="text/javascript">
+            var auto_height = getComputedStyle(document.querySelector(".p-wrap .p-main")).height.split("px")[0];
+            document.querySelector(".p-wrap .p-main").style.height = 21+"px";
+            document.querySelector(".p-wrap .p-title i").onclick = function(){
+                if(this.className == "on"){
+                    this.className = "";
+                    document.querySelector(".p-wrap .p-main").style.height = 21+"px";
+                }else{
+                    this.className = "on";
+                    document.querySelector(".p-wrap .p-main").style.height = auto_height+"px";
+                }
+            }
+        </script>
+        <div class="displaynone dis1"></div>
+        <div class="displaynone dis2"></div>
+    </div>
+</section>
+</body>
+</html>

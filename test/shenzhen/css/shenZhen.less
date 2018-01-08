@@ -1,0 +1,513 @@
+@import "style";
+
+
+//@media screen and (min-width:640px){
+//  html{font-size:40px;}
+//}
+//@media screen and (min-width:414px) and (max-width:639px){
+//  html{font-size:25.75px;}
+//}
+//@media screen and (min-width:375px) and (max-width:413px){
+//  html{font-size:23.5px;}
+//}
+//@media screen and (min-width:320px) and (max-width:374px){
+//  html{font-size:20px;}
+//}
+//
+//html{
+//  width: 100%;
+//  height: 100%;
+//}
+//body{
+//  max-width: 750px;
+//  margin: 0 auto;
+//  height: 100%;
+//}
+
+.container{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  .title{
+    background-color: #F5F5FB;
+    font-size: .8rem;
+    line-height: 1.7rem;
+    height: 1.7rem;
+    text-align: center;
+    color:#39393A;
+    margin-bottom:2.5rem;
+    position: relative;
+    z-index: 10;
+  }
+  .seat-main{
+    position: relative;
+    padding-top: 4.2rem;
+    margin-top: -4.2rem;
+    z-index: 5;
+    height: 100%;
+    .box_sizing();
+    padding-bottom: 4rem;
+    margin-bottom: -4rem;
+    .seatlink{
+      position: absolute;
+      z-index: 6;
+      //transform: scale(.8,.8);
+      a{
+        display: block;
+        width: 100%;
+        height: 100%;
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+    }
+    // 外层座位
+    .wrap-seat200{
+      //width: 8.275rem;
+      //height: 4.95rem;
+      width: 4.6rem;
+      height: 2.9rem;
+      left: 50%;
+      -webkit-transform: translate(-50%, 36%);
+      -moz-transform: translate(-50%, 36%);
+      -ms-transform: translate(-50%, 36%);
+      transform: translate(-50%, 36%);
+      a{
+        background-image: url(../images/200_n.png);
+        &:active{
+          background-image: url(../images/200_a.png);
+        }
+      }
+    }
+    .wrap-seat201{
+      //width: 6.3rem;
+      //height: 6.025rem;
+      width: 4rem;
+      height: 3.8rem;
+      left: 50%;
+      -webkit-transform: translate(44%, 40%) rotate(-1deg);
+      -moz-transform: translate(44%, 40%) rotate(-1deg);
+      -ms-transform: translate(44%, 40%) rotate(-1deg);
+      transform: translate(44%, 40%) rotate(-1deg);
+      a{
+        background-image: url(../images/201_n.png);
+        &:active{
+          background-image: url(../images/201_a.png);
+        }
+      }
+    }
+    .wrap-seat202{
+      //width: 6.325rem;
+      //height: 5.9rem;
+      width: 4rem;
+      height: 3.8rem;
+      left: 50%;
+      -webkit-transform: translate(-140%, 39%) rotate(2deg);
+      -moz-transform: translate(-140%, 39%) rotate(2deg);
+      -ms-transform: translate(-140%, 39%) rotate(2deg);
+      transform: translate(-140%, 39%) rotate(2deg);
+      a{
+        background-image: url(../images/202_n.png);
+        &:active{
+          background-image: url(../images/202_a.png);
+        }
+      }
+    }
+    .wrap-seat203{
+      //width: 5.45rem;
+      //height: 6.25rem;
+      width: 3.3rem;
+      height: 3.7rem;
+      left: 50%;
+      -webkit-transform: translate(117%, 114%)  rotate(-8deg);
+      -moz-transform: translate(117%, 114%)  rotate(-8deg);
+      -ms-transform: translate(117%, 114%)  rotate(-8deg);
+      transform: translate(117%, 114%)  rotate(-8deg);
+      a{
+        background-image: url(../images/203_n.png);
+        &:active{
+          background-image: url(../images/203_a.png);
+        }
+      }
+    }
+    .wrap-seat204{
+      //width: 5.35rem;
+      //height: 6.325rem;
+      width: 3.3rem;
+      height: 3.7rem;
+      left: 50%;
+      -webkit-transform: translate(-208%, 110%)  rotate(6deg);
+      -moz-transform: translate(-208%, 110%)  rotate(6deg);
+      -ms-transform: translate(-208%, 110%)  rotate(6deg);
+      transform: translate(-208%, 110%)  rotate(6deg);
+      a{
+        background-image: url(../images/204_n.png);
+        &:active{
+          background-image: url(../images/204_a.png);
+        }
+      }
+    }
+    .wrap-seat205{
+      //width: 5.775rem;
+      //height: 6.325rem;
+      width: 3.5rem;
+      height: 3.8rem;
+      left: 50%;
+      -webkit-transform: translate(119%, 212%)  rotate(-8deg);
+      -moz-transform: translate(119%, 212%)  rotate(-8deg);
+      -ms-transform: translate(119%, 212%)  rotate(-8deg);
+      transform: translate(119%, 212%)  rotate(-8deg);
+      a{
+        background-image: url(../images/205_n.png);
+        &:active{
+          background-image: url(../images/205_a.png);
+        }
+      }
+    }
+    .wrap-seat206{
+      //width: 5.725rem;
+      //height: 6.3rem;
+      width: 3.5rem;
+      height: 3.8rem;
+      left: 50%;
+      -webkit-transform: translate(-213%, 206%) rotate(8deg);
+      -moz-transform: translate(-213%, 206%) rotate(8deg);
+      -ms-transform: translate(-213%, 206%) rotate(8deg);
+      transform: translate(-213%, 206%) rotate(8deg);
+      a{
+        background-image: url(../images/206_n.png);
+        &:active{
+          background-image: url(../images/206_a.png);
+        }
+      }
+    }
+    // 内层座位
+    .wrap-seat101{
+      //width: 5.725rem;
+      //height: 5.175rem;
+      width: 3.4rem;
+      height: 3.5rem;
+      left: 50%;
+      -webkit-transform: translate(2%, 118%);
+      -moz-transform: translate(2%, 118%);
+      -ms-transform: translate(2%, 118%);
+      transform: translate(2%, 118%);
+      a{
+        background-image: url(../images/101_n.png);
+        &:active{
+          background-image: url(../images/101_a.png);
+        }
+      }
+    }
+    .wrap-seat102{
+      //width: 5.725rem;
+      //height: 5.2rem;
+      width: 3.4rem;
+      height: 3.5rem;
+      left: 50%;
+      -webkit-transform: translate(-101%, 118%);
+      -moz-transform: translate(-101%, 118%);
+      -ms-transform: translate(-101%, 118%);
+      transform: translate(-101%, 118%);
+      a{
+        background-image: url(../images/102_n.png);
+        &:active{
+          background-image: url(../images/102_a.png);
+        }
+      }
+    }
+    .wrap-seat103{
+      //width: 4.65rem;
+      //height: 8.5rem;
+      width: 2.9rem;
+      height: 5.4rem;
+      left: 50%;
+      -webkit-transform: translate(54%, 112%);
+      -moz-transform: translate(54%, 112%);
+      -ms-transform: translate(54%, 112%);
+      transform: translate(54%, 112%);
+      a{
+        background-image: url(../images/103_n.png);
+        &:active{
+          background-image: url(../images/103_a.png);
+        }
+      }
+    }
+    .wrap-seat104{
+      //width: 4.65rem;
+      //height: 8.5rem;
+      width: 2.9rem;
+      height: 5.1rem;
+      left: 50%;
+      -webkit-transform: translate(-147%, 119%);
+      -moz-transform: translate(-147%, 119%);
+      -ms-transform: translate(-147%, 119%);
+      transform: translate(-147%, 119%);
+      a{
+        background-image: url(../images/104_n.png);
+        &:active{
+          background-image: url(../images/104_a.png);
+        }
+      }
+    }
+    .wrap-seat105{
+      width: 1.975rem;
+      height: 1.5rem;
+      left: 50%;
+      -webkit-transform: translate(112%, 735%);
+      -moz-transform: translate(112%, 735%);
+      -ms-transform: translate(112%, 735%);
+      transform: translate(112%, 735%);
+      //安卓样式
+      &.on{
+        -webkit-transform: translate(112%, 745%);
+        -moz-transform: translate(112%, 745%);
+        -ms-transform: translate(112%, 745%);
+        transform: translate(112%, 745%);
+      }
+      a{
+        background-image: url(../images/105_n.png);
+        &:active{
+          background-image: url(../images/105_a.png);
+        }
+      }
+    }
+    .wrap-seat106{
+      width: 2rem;
+      height: 1.5rem;
+      left: 50%;
+      -webkit-transform: translate(-189%,  728%);
+      -moz-transform: translate(-189%,  728%);
+      -ms-transform: translate(-189%,  728%);
+      transform: translate(-189%,  728%);
+      //安卓样式
+      &.on{
+        -webkit-transform: translate(-189%,740%);
+        -moz-transform: translate(-189%,740%);
+        -ms-transform: translate(-189%,740%);
+        transform: translate(-189%,740%);
+      }
+      a{
+        background-image: url(../images/106_n.png);
+        &:active{
+          background-image: url(../images/106_a.png);
+        }
+      }
+    }
+    //座位号
+    .door{
+      position: absolute;
+      z-index: 4;
+      background-repeat: no-repeat;
+      background-size: contain;
+      &.door1{
+        //width: 2.725rem;
+        //height: 5.575rem;
+        width: 1.5rem;
+        height: 3.2rem;
+        left: 50%;
+        -webkit-transform: translate(111%, 26%);
+        -moz-transform: translate(111%, 26%);
+        -ms-transform: translate(111%, 26%);
+        transform: translate(111%, 26%);
+        background-image: url(../images/door1.png);
+      }
+      &.door2{
+        //width: 2.65rem;
+        //height: 5.4rem;
+        width: 1.5rem;
+        height: 3.2rem;
+        left: 50%;
+        -webkit-transform: translate(-205%, 27%);
+        -moz-transform: translate(-205%, 27%);
+        -ms-transform: translate(-205%, 27%);
+        transform: translate(-205%, 27%);
+        background-image: url(../images/door2.png);
+      }
+      &.door3{
+        //width: 5.125rem;
+        //height: 4.075rem;
+        width: 3rem;
+        height: 3rem;
+        left: 50%;
+        -webkit-transform: translate(125%, 102%) rotate(-4deg);
+        -moz-transform: translate(125%, 102%) rotate(-4deg);
+        -ms-transform: translate(125%, 102%) rotate(-4deg);
+        transform: translate(125%, 102%) rotate(-4deg);
+        background-image: url(../images/door3.png);
+      }
+      &.door4{
+        //width: 5.175rem;
+        //height: 3.925rem;
+        width: 3rem;
+        height: 3rem;
+        left: 50%;
+        -webkit-transform: translate(-220%, 100%) rotate(5deg);
+        -moz-transform: translate(-220%, 100%) rotate(5deg);
+        -ms-transform: translate(-220%, 100%) rotate(5deg);
+        transform: translate(-220%, 100%) rotate(5deg);
+        background-image: url(../images/door4.png);
+      }
+      &.door5{
+        //width: 5.8rem;
+        //height: 1.275rem;
+        width: 3.3rem;
+        height: 1rem;
+        left: 50%;
+        -webkit-transform:translate(142%, 765%) rotate(-8deg);
+        -moz-transform:translate(142%, 765%) rotate(-8deg);
+        -ms-transform:translate(142%, 765%) rotate(-8deg);
+        transform: translate(142%, 765%) rotate(-8deg);
+        &.on{
+          -webkit-transform:translate(142%, 775%) rotate(-8deg);
+          -moz-transform:translate(142%, 775%) rotate(-8deg);
+          -ms-transform:translate(142%, 775%) rotate(-8deg);
+          transform: translate(142%, 775%) rotate(-8deg);
+        }
+        background-image: url(../images/door5.png);
+      }
+      &.door6{
+        //width: 5.8rem;
+        //height: 1.25rem;
+        width: 3.3rem;
+        height: 1rem;
+        left: 50%;
+        -webkit-transform:translate(-239%, 750%) rotate(8deg);
+        -moz-transform:translate(-239%, 750%) rotate(8deg);
+        -ms-transform:translate(-239%, 750%) rotate(8deg);
+        transform: translate(-239%, 748%) rotate(8deg);
+        &.on{
+          -webkit-transform:translate(-239%, 760%) rotate(8deg);
+          -moz-transform:translate(-239%, 760%) rotate(8deg);
+          -ms-transform:translate(-239%, 760%) rotate(8deg);
+          transform: translate(-239%, 760%) rotate(8deg);
+        }
+        background-image: url(../images/door6.png);
+      }
+      &.door7{
+        //width: 5.2rem;
+        //height: 4.075rem;
+        width: 3rem;
+        height: 3rem;
+        left: 50%;
+        -webkit-transform:translate(149%, 357%) rotate(-8deg);
+        -moz-transform:translate(149%, 357%) rotate(-8deg);
+        -ms-transform:translate(149%, 357%) rotate(-8deg);
+        transform: translate(149%, 357%) rotate(-8deg);
+        background-image: url(../images/door7.png);
+      }
+      &.door8{
+        //width: 5.175rem;
+        //height: 4rem;
+        width: 3rem;
+        height: 3rem;
+        left: 50%;
+        -webkit-transform:translate(-243%, 347%) rotate(8deg);
+        -moz-transform:translate(-243%, 347%) rotate(8deg);
+        -ms-transform:translate(-243%, 347%) rotate(8deg);
+        transform: translate(-243%, 347%) rotate(8deg);
+        background-image: url(../images/door8.png);
+      }
+      &.guodao-102-101{
+        width: 0.4rem;
+        height: 2.1rem;
+        left: 50%;
+        -webkit-transform: translate(-19%, 200%);
+        -moz-transform: translate(-19%, 200%);
+        -ms-transform: translate(-19%, 200%);
+        transform: translate(-19%, 200%);
+        background-image: url(../images/guodao_102_101.png);
+      }
+      &.guodao-101-103{
+        width: 1.8rem;
+        height: 1.5rem;
+        left: 50%;
+        -webkit-transform: translate(96%, 401%);
+        -moz-transform: translate(96%, 401%);
+        -ms-transform: translate(96%, 401%);
+        transform: translate(96%, 401%);
+        background-image: url(../images/guodao_101_103.png);
+      }
+      &.guodao-103-105{
+        width: 1.8rem;
+        height: 1.5rem;
+        left: 50%;
+        -webkit-transform: translate(87%, 675%);
+        -moz-transform: translate(87%, 675%);
+        -ms-transform: translate(87%, 675%);
+        transform: translate(87%, 675%);
+        &.on{
+          -webkit-transform: translate(87%, 685%);
+          -moz-transform: translate(87%, 685%);
+          -ms-transform: translate(87%, 685%);
+          transform: translate(87%, 685%);
+        }
+        background-image: url(../images/guodao_103_105.png);
+      }
+      &.guodao-102-104{
+        width: 1.8rem;
+        height: 1.5rem;
+        left: 50%;
+        -webkit-transform: translate(-195%, 399%);
+        -moz-transform: translate(-195%, 399%);
+        -ms-transform: translate(-195%, 399%);
+        transform: translate(-195%, 399%);
+        background-image: url(../images/guodao_102_104.png);
+      }
+      &.guodao-104-106{
+        width: 1.8rem;
+        height: 1.5rem;
+        left: 50%;
+        -webkit-transform: translate(-183%, 665%);
+        -moz-transform: translate(-183%, 665%);
+        -ms-transform: translate(-183%, 665%);
+        transform: translate(-183%, 665%);
+        &.on{
+          -webkit-transform: translate(-183%, 675%);
+          -moz-transform: translate(-183%, 675%);
+          -ms-transform: translate(-183%, 675%);
+          transform: translate(-183%, 675%);
+        }
+        background-image: url(../images/guodao_104_106.png);
+      }
+    }
+    //舞台
+    .stage{
+      position: absolute;
+      z-index: 4;
+      //width: 10.4rem;
+      //height: 12.55rem;
+      width: 6rem;
+      height: 7rem;
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-image: url(../images/stage.png);
+      left: 50%;
+      -webkit-transform:translate(-48%, 94%);
+      -moz-transform:translate(-48%, 94%);
+      -ms-transform:translate(-48%, 94%);
+      transform: translate(-48%, 94%);
+    }
+  }
+  .seat-price{
+    position: relative;
+    z-index: 6;
+    padding: 0 .5rem;
+    .seat-price-item{
+      display: inline-block;
+      margin-left: -1px;
+      line-height: normal;
+      margin-right: .5rem;
+      i{
+        display: inline-block;
+        width: .8rem;
+        height: .8rem;
+        margin-right: .2rem;
+        vertical-align: middle;
+      }
+      span{
+        font-size: .7rem;
+        vertical-align: middle;
+      }
+    }
+  }
+}

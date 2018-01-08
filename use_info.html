@@ -56,6 +56,9 @@
             -webkit-transform: rotate(180deg);
             transform: rotate(180deg);
         }
+        .layui-laydate-hint{
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -151,9 +154,30 @@
                                 日&nbsp;&nbsp;&nbsp;期
                             </div>
                             <div class="use-info-input-main">
-                                <!-- disabled="disabled" -->
-                                <input type="text" placeholder="请选择日期"  id="laydateTest"/>
-                                <span class="rili"></span>
+                                <div id="laydateTest" style="width: 100%;
+                                                                height: 100%;
+                                                                border: none;
+                                                                outline: none;
+                                                                color: #757575;
+                                                                background-color: #F3F3F3;
+                                                                padding: 0 40px 0 30px;
+                                                                -webkit-box-sizing: border-box;
+                                                                -moz-box-sizing: border-box;
+                                                                box-sizing: border-box;
+                                                                cursor: pointer;">请选择日期</div>
+                                <span style="display: inline-block;
+                                              width: 40px;
+                                              height: 40px;
+                                              background-color: #E9E9E9;
+                                              background-repeat: no-repeat;
+                                              background-position: 50%;
+                                              position: absolute;
+                                              z-index: 2;
+                                              right: 0;
+                                              top: 0;
+                                              background-image: url(images/rili.png);"></span>
+                                <!--<input type="text" placeholder="请选择日期"  id="laydateTest" disabled="disabled"/>-->
+                                <!--<span class="rili"></span>-->
                             </div>
                             <div class="use-info-input-msg">
                                 * 请选择日期
@@ -491,6 +515,7 @@
                             "month": "1",
                             "date": [
                                 {"date": "20", "status": 1},
+                                {"date": "1", "status": 1},
                                 {"date": "21", "status": 1},
                                 {"date": "22", "status": 1},
                                 {"date": "23", "status": 1},
@@ -525,7 +550,7 @@
         };
         var json01 = {
             "info": {
-                "disable": ["11-11", "12-12", "01-01"],
+                "disable": ["11-11", "12-12", "01-01","01-27"],
                 "week": ["0", "5", "6"]
             },
             "date_status": 1,
@@ -534,10 +559,12 @@
         };
         var json02 = {
             "info": {
-                "disable": [],
+                "disable": ["11-11", "12-12", "01-01","01-27"],
                 "date": [
                     {"date": "1", "status": 1},
                     {"date": "3", "status": 1},
+                    {"date": "12", "status": 1},
+                    {"date": "11", "status": 1},
                     {"date": "4", "status": 1}
                 ]
             },
@@ -546,7 +573,7 @@
             "state": "success"
         };
 
-        var date_rule_json = json00;
+        var date_rule_json = json02;
 
         layui.config({
             base: "lib/distpicker/" //根目录
@@ -648,7 +675,9 @@
 
             laydate.render({
                 elem: '#laydateTest', //指定元素
-                trigger: 'click'
+                trigger: 'click',
+                format: 'yyyy年MM月dd日',
+                showBottom: false
             });
 
         });

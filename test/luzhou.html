@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>{$name} 座位</title>
+    <meta name="description" content="微信在线购票，海量电影，在线订购"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="luzhou/css/reset.css" />
+    <link rel="stylesheet" href="luzhou/css/seat.css" />
+    <style>
+    </style>
+</head>
+<body>
+    <section class="seat_main">
+        <div class="container">
+            <div class="title">位置分区</div>
+
+            <!--一层-->
+            <div class="box_main box_main1">
+                <div class="desc">一层</div>
+
+
+                <!--A区-->
+                <div class="seatlink zwleft">
+                    <a  data-id="4_a" href="javascript:;" data-nid="4"></a>
+                </div>
+                <!--B区-->
+                <div class="seatlink zwcontent">
+                    <a  data-id="5_b" href="javascript:;" data-nid="5"></a>
+                </div>
+                <!--C区-->
+                <div class="seatlink zwright">
+                    <a data-id="6_c" href="javascript:;" data-nid="6"></a>
+                </div>
+
+                <!--舞台-->
+                <div class="bt">
+                    <a href="javascript:;"></a>
+                </div>
+
+
+            </div>
+
+
+            <!--二层-->
+            <div class="box_main box_main2">
+
+
+
+              <div class="pr content" style="width: 320px;position: relative;      margin: 0 auto;height: 145px;">
+
+                  <div class="desc">二层</div>
+                  <!--D区-->
+                  <div class="seatlink zwleft">
+                      <a data-id="7_d" href="{:U('Movies/seat',array('id'=>7,'season_id'=>$season_id))}" data-nid="7"></a>
+                  </div>
+                  <!--E区-->
+                  <div class="seatlink zwcontent">
+                      <a data-id="8_e" href="{:U('Movies/seat',array('id'=>8,'season_id'=>$season_id))}" data-nid="8"></a>
+                  </div>
+                  <!--F区-->
+                  <div class="seatlink zwright">
+                      <a data-id="9_f" href="{:U('Movies/seat',array('id'=>9,'season_id'=>$season_id))}" data-nid="9"></a>
+                  </div>
+                  <!--g区-->
+                  <div class="seatlink zwbottom">
+                      <a data-id="10_g" href="{:U('Movies/seat',array('id'=>10,'season_id'=>$season_id))}" data-nid="10"></a>
+                  </div>
+
+                  <!--舞台-->
+                  <div class="bt">
+                      <a href="javascript:;"></a>
+                  </div>
+              </div>
+
+
+            </div>
+        </div>
+        <style>
+            html,body{margin: 0;padding: 0}
+            .p-wrap{
+                padding-top: 10px;
+            }
+            .p-wrap .p-title{
+                font-size: 14px;
+                border-bottom: 1px solid #e1e1e1;
+                border-top: 1px solid #e1e1e1;
+                padding: 5px 10px;
+                color:#000;
+                margin: 0;
+            }
+            .p-wrap .p-title i{
+                color:#989898;
+                display: inline-block;
+                float: right;
+                width: 15px;
+                height: 17px;
+                background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAIZJREFUeNpi3LptmwIDEHh7eT1goADAzGEC4vlAfB4oYECBYQlA6j4Q14MMLISK7yfHUKhhIEd9AOKJjFBBkEH7oWocgd6/QIZhYH2MSJIkGYrNMJA4I5oiogzFZRiGgcQYis8wrAbiM5SQYTgNxGYoEBsQMgyvgVgMFSBkGEEDyYl9gAADAPIxXw9oxnz5AAAAAElFTkSuQmCC) no-repeat center;
+            }
+            .p-wrap .p-title i.on{
+                transform: rotate(180deg);
+            }
+            .p-wrap .p-main{
+                margin: 10px 0;
+            }
+            .p-wrap .p-main div{
+                display: inline-block;
+                padding: 0 10px;
+                color:#000;
+                font-size: 13px;
+                width: 105px;
+                box-sizing: border-box;
+            }
+            .p-wrap .p-main div span{
+                display: inline-block;
+                height: 10px;
+                width: 20px;
+                margin-right: 5px;
+            }
+        </style>
+        <script type="text/javascript">
+            var auto_height = getComputedStyle(document.querySelector(".p-wrap .p-main")).height.split("px")[0];
+            document.querySelector(".p-wrap .p-main").style.height = 21+"px";
+            document.querySelector(".p-wrap .p-title i").onclick = function(){
+                if(this.className == "on"){
+                    this.className = "";
+                    document.querySelector(".p-wrap .p-main").style.height = 21+"px";
+                }else{
+                    this.className = "on";
+                    document.querySelector(".p-wrap .p-main").style.height = auto_height+"px";
+                }
+            }
+        </script>
+    </section>
+</body>
+</html>

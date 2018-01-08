@@ -1,0 +1,71 @@
+.seat_header p { background-color: #f5f5fb; text-align: center; padding: 10px 0; }
+
+.seat_main .title { text-align: center; padding: 10px 0; }
+.box_main { margin: 0 auto; position: relative; }
+
+.box_main .desc {
+    font-size: 16px;
+    text-align: center;
+    background: #7e7d7d;
+    color: #fff;
+    width: 230px;
+    height: 50px;
+    line-height: 50px;
+    margin: 0 auto;
+}
+.seat_box{
+    overflow: hidden;
+}
+.seat_box{
+    width: 264px;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+.seat_box p{
+    font-size: 14px;
+    line-height: 30px;
+    text-align: center;
+}
+.seatlink{
+    float: left;
+}
+.zwleft{
+    margin-right: 10px;
+}
+.zwleft a{
+    display: block;
+    background: url("../images/1_1.png") no-repeat center;
+    width: 127px;
+    height: 155px;
+    -webkit-background-size: 127px 155px;
+    background-size: 127px 155px;
+}
+.zwleft a:active{
+    background: url("../images/1_2.png") no-repeat center;
+    -webkit-background-size: 127px 155px;
+    background-size: 127px 155px;
+}
+.zwright a{
+    display: block;
+    background: url("../images/2_1.png") no-repeat center;
+    width: 127px;
+    height: 155px;
+    -webkit-background-size: 127px 155px;
+    background-size: 127px 155px;
+}
+.zwright a:active{
+    background: url("../images/2_2.png") no-repeat center;
+    -webkit-background-size: 127px 155px;
+    background-size: 127px 155px;
+}
+.displaynone{
+    width: 0;
+    height: 0;
+
+}
+.dis1{
+    background: url("../images/1_2.png") no-repeat center;
+}
+.dis2{
+    background: url("../images/2_2.png") no-repeat center;
+}
