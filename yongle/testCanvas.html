@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="https://at.alicdn.com/t/font_405873_zwkb3okeh5lsdcxr.css"/>
+    <style>
+        html,body{
+            margin: 0;padding: 0;
+            /*height: 100%;*/
+            width: 100%;
+        }
+        .canvas_wrap{
+            height: 600px;
+            border: 1px solid red;;
+        }
+
+
+        .bubbing_box{
+            width: 500px;
+            height: 500px;
+            position: relative;
+            display: none;
+        }
+        .bubbing_box div {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            -moz-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+        }
+
+        .bubbing_box .item01{
+            width: 400px;
+            height: 400px;
+            background-color: red;
+        }
+        .bubbing_box .item02{
+            width: 300px;
+            height: 300px;
+            background-color: #2187e7;
+        }
+        .bubbing_box .item03{
+            width: 200px;
+            height: 200px;
+            background-color: #999999;
+        }
+        .area-msgbox{
+            position: fixed;
+            width: 100px;
+            height: 100px;
+            border:1px solid red;
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="area-msgbox" id="singleSeatMessage"></div>
+    <div class="bubbing_box">
+        <!--
+            增加 锁定状态
+            data-seatStatus
+            0 表示可选
+            1 表示占位
+            2 表示锁定
+            3 表示已售
+        -->
+        <div class="item01">
+            <div class="item02">
+                <div class="item03"></div>
+            </div>
+        </div>
+    </div>
+    <button id="max">放大</button>
+    <button id="min">缩小</button>
+    <div style="padding: 50px">
+        <div class="canvas_wrap">
+            <canvas id="canvas" style="background:#fff"></canvas>
+        </div>
+    </div>
+
+    <script src="js/jquery-1.7.2.js"></script>
+    <script src="testCanvas.js"></script>
+</body>
+</html>

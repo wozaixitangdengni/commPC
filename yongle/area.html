@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>在线选座</title>
+    <link rel="stylesheet" href="css/pcmain.css">
+    <script type="text/javascript" src="js/jquery-1.7.2.js"></script>
+</head>
+<body id="app" style="overflow:hidden;">
+<div class="head" id="header">
+    <ul>
+        <li class="head-ul-l">
+            <div class="seat-areas">
+                已选场次：<span id="areasShow"></span>
+            </div>
+        </li>
+        <li class="head-selcq" style="display:none;"><a href="javascript:void(0);">选座场次</a></li>
+        <li style="display:none;">3</li>
+    </ul>
+</div>
+<div class="online-cq-cont">
+    <div class="cl">
+        <div class="online-cont-l" id="canvas1ShowBlock">
+            <div id="canvasContent" style="position:relative;">
+                <canvas id="canvas1" style="position:absolute;left:0;top:0;background-color:#fff;"></canvas>
+                <div style="position:absolute;left:170px;top:180px;"><a href="javascript:void(0);" id="areaUp" style="display:none;">放大</a></div>
+            </div>
+            <div class="pcprice-info" style="display:none;">
+                <div>
+                    <ul id="pcpriceInfoUi">
+                    </ul>
+                </div>
+                <div class="pcprice-seaticon"><s></s></div>
+            </div>
+        </div>
+        <div class="online-cont-r" id="canvasShowBlock" style="display:none;">
+            <div class="online-header">
+                <div class="online-header-area fl">
+                    <div>所在区域：<span id="selectedAreaName"></span></div>
+                </div>
+                <div class="online-heaser-center fl">
+                    <div class="online-heaser-img">
+                    </div>
+                </div>
+                <div class="online-sacles">
+                    <a href="javascript:void(0);" class="seat-big" id="seatBigger">放大</a>
+                    <a href="javascript:void(0);" class="seat-small" id="seatSmaller">缩小</a>
+                </div>
+            </div>
+            <div id="canvasDiv" style="-webkit-transform: translateZ(0);">
+                <canvas id="canvas" style="background:#fff;"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="seat-bom-pos" style="display:none;">
+    <div id="araesShow">
+        <div class="seat-static clearfloat">
+            <div class="online-ub fl">
+                <span>票价说明</span>
+            </div>
+            <ul class="fr">
+                <li><span><s class="static-a"></s><em>已售</em></span></li>
+                <li><span><s class="static-b"></s><em>套票</em></span></li>
+                <li><span><s class="static-c"></s><em>已选</em></span></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="seats-sel" id="seatSels" style="display:none;">
+    <div class="seats-sel-hed">
+        已选座位[<span></span>]
+    </div>
+    <div class="seats-lists">
+        <ul id="seatsUl">
+        </ul>
+    </div>
+    <a href="javascript:void(0);" class="seats-btn" id="seatsBtnBuy">结算<i>：</i><span></span><i>元</i></a>
+</div>
+<div class="cqlists" style="display:none;">
+    <div class="seat-cq" id="seatCq">
+        <div class="seat-cq-dotall">
+            <div class="seat-areas">
+                <a>选择场次时间</a>
+            </div>
+            <div class="cqlists-bd">
+                <ul class="seat-areas" id="areas1" style="border-top: 0px none; border-bottom: 0px none;">
+                </ul>
+            </div>
+            <s></s>
+        </div>
+    </div>
+</div>
+<div class="area-msgbox" id="areaMessage" style="display:none;">
+    <div class="area-msgbox-main">
+        <ul>
+            <li>点击进入：<span id="areaSelectId"></span></li>
+            <li>座位总数：<span id="areaSelectTotalNums"></span></li>
+            <li>剩余座位：<span id="areaSelectNums"></span></li>
+        </ul>
+    </div>
+</div>
+<div class="area-msgbox" id="singleSeatMessage" style="display:none;width:180px;height:auto;">
+    <div class="area-msgbox-main">
+        <ul>
+            <li>座位票价：<span id="singleSeatPrice"></span> 元</li>
+            <li>座位号：<span id="singleSeatNum"></span></li>
+            <li>座位状态：<span id="singleSeatStatic"></span></li>
+        </ul>
+    </div>
+</div>
+<!--加载座位事的遮罩层-->
+<div class="pageoverlay" id="pageOverlay">
+</div>
+<div class="loading">
+    <div class="circle"></div>
+    <div class="circle1"></div>
+</div>
+<div class="bommsg" id="bomMsg" style="display:none;">
+    <span id="shownMsg"></span>
+</div>
+<div class="seatload" id="seatLoad">
+    <div id="block_1" class="barlittle"></div>
+    <div id="block_2" class="barlittle"></div>
+    <div id="block_3" class="barlittle"></div>
+    <div id="block_4" class="barlittle"></div>
+    <div id="block_5" class="barlittle"></div>
+</div>
+<script type="text/javascript" src="js/core.js"></script>
+<script type="text/javascript" src="js/config.js"></script>
+<!--<script type="text/javascript" src="js/canvasSeat.js"></script>-->
+<script type="text/javascript" src="js/module01.js"></script>
+<script type="text/javascript" src="js/module02.js"></script>
+<script type="text/javascript" src="js/module03.js"></script>
+<script type="text/javascript" src="js/module04.js"></script>
+<script type="text/javascript" src="js/module05.js"></script>
+<script type="text/javascript" src="js/module06.js"></script>
+<script type="text/javascript" src="js/module07.js"></script>
+<script type="text/javascript" src="js/module08.js"></script>
+</body>
+</html>
