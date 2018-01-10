@@ -5,7 +5,7 @@
     <title></title>
     <link rel="stylesheet" href="lib/layui/css/layui.css"/>
     <link rel="stylesheet" href="css/comm.css"/>
-    <link rel="stylesheet" href="area/luzhou/css/seat.css" />
+    <link rel="stylesheet" href="area/luzhou/css/area_min.css" />
     <style>
         .test{
             /*-webkit-transform:scale(7deg);*/
@@ -14,18 +14,12 @@
             /*-o-transform:scale(7deg);*/
             transform:scale(.2,.2);
         }
-        #singleSeatMessage{
-            position: fixed;
-            z-index: 1000;
-            width: 100px;
-            height: 100px;
-            border: 1px solid red;
-        }
     </style>
 </head>
 <body>
 <div class="comm">
     <header class="comm-head">
+        <img src="images/banner01.png" alt=""/>
     </header>
     <div class="buy-ticket-status">
         <!--
@@ -57,9 +51,56 @@
             <header class="select-area-title">
                 加拿大太阳剧团KOOZA秀 <span>>&nbsp;2017-12-30 周六  19:00-20:30</span>
             </header>
-            <div class="select-area-main">
+            <div class="select-area-main" style="height: 500px">
                 <div class="select-area-ticket-dcs">
                     <div class="area-min">
+                        <div class="bg bg1">
+                            <div class="desc">一层</div>
+                            <!--A区-->
+                            <div class="seatlink zwleft">
+                                <a  data-id="4_a" class="active" href="{:U('Movies/seat',array('id'=>4,'season_id'=>$season_id))}" data-nid="4"></a>
+                            </div>
+                            <!--B区-->
+                            <div class="seatlink zwcontent">
+                                <a  data-id="5_b" href="{:U('Movies/seat',array('id'=>5,'season_id'=>$season_id))}" data-nid="5"></a>
+                            </div>
+                            <!--C区-->
+                            <div class="seatlink zwright">
+                                <a data-id="6_c" href="{:U('Movies/seat',array('id'=>6,'season_id'=>$season_id))}" data-nid="6"></a>
+                            </div>
+
+                            <!--舞台-->
+                            <div class="bt">
+                                <a href="javascript:;"></a>
+                            </div>
+                        </div>
+                        <div class="bg bg2">
+                            <div class="desc">二层</div>
+                            <!--D区-->
+                            <div class="seatlink zwleft">
+                                <a data-id="7_d" href="{:U('Movies/seat',array('id'=>7,'season_id'=>$season_id))}" data-nid="7"></a>
+                            </div>
+                            <!--E区-->
+                            <div class="seatlink zwcontent">
+                                <a data-id="8_e" href="{:U('Movies/seat',array('id'=>8,'season_id'=>$season_id))}" data-nid="8"></a>
+                            </div>
+                            <!--F区-->
+                            <div class="seatlink zwright">
+                                <a data-id="9_f" href="{:U('Movies/seat',array('id'=>9,'season_id'=>$season_id))}" data-nid="9"></a>
+                            </div>
+                            <!--g区-->
+                            <div class="seatlink zwbottom">
+                                <a data-id="10_g" href="{:U('Movies/seat',array('id'=>10,'season_id'=>$season_id))}" data-nid="10"></a>
+                            </div>
+
+                            <!--舞台-->
+                            <div class="bt">
+                                <a href="javascript:;"></a>
+                            </div>
+                        </div>
+                        <div class="scale-area">
+                            <a href="javascript:;">放大</a>
+                        </div>
                     </div>
                     <p class="title">
                         票价说明：
@@ -115,70 +156,6 @@
                                 </div>
                                 <p><span>楼上A区</span> 1排5坐</p>
                             </li>
-                            <li>
-                                <div>
-                                    <img src="images/seat.png" alt="" style="background-color: red"/>
-                                    <span>￥280.00</span>
-                                    <i></i>
-                                </div>
-                                <p><span>楼上A区</span> 1排5坐</p>
-                            </li>
-                            <li>
-                                <div>
-                                    <img src="images/seat.png" alt="" style="background-color: red"/>
-                                    <span>￥280.00</span>
-                                    <i></i>
-                                </div>
-                                <p><span>楼上A区</span> 1排5坐</p>
-                            </li>
-                            <li>
-                                <div>
-                                    <img src="images/seat.png" alt="" style="background-color: red"/>
-                                    <span>￥280.00</span>
-                                    <i></i>
-                                </div>
-                                <p><span>楼上A区</span> 1排5坐</p>
-                            </li>
-                            <li>
-                                <div>
-                                    <img src="images/seat.png" alt="" style="background-color: red"/>
-                                    <span>￥280.00</span>
-                                    <i></i>
-                                </div>
-                                <p><span>楼上A区</span> 1排5坐</p>
-                            </li>
-                            <li>
-                                <div>
-                                    <img src="images/seat.png" alt="" style="background-color: red"/>
-                                    <span>￥280.00</span>
-                                    <i></i>
-                                </div>
-                                <p><span>楼上A区</span> 1排5坐</p>
-                            </li>
-                            <li>
-                                <div>
-                                    <img src="images/seat.png" alt="" style="background-color: red"/>
-                                    <span>￥280.00</span>
-                                    <i></i>
-                                </div>
-                                <p><span>楼上A区</span> 1排5坐</p>
-                            </li>
-                            <li>
-                                <div>
-                                    <img src="images/seat.png" alt="" style="background-color: red"/>
-                                    <span>￥280.00</span>
-                                    <i></i>
-                                </div>
-                                <p><span>楼上A区</span> 1排5坐</p>
-                            </li>
-                            <li>
-                                <div>
-                                    <img src="images/seat.png" alt="" style="background-color: red"/>
-                                    <span>￥280.00</span>
-                                    <i></i>
-                                </div>
-                                <p><span>楼上A区</span> 1排5坐</p>
-                            </li>
                         </ul>
                         <a href="javascript:void(0)" class="submit_order">
                             确定下单&nbsp;￥&nbsp;<span>7800.00</span>
@@ -191,7 +168,10 @@
             </div>
         </div>
     </main>
-    <div id="singleSeatMessage"></div>
+    <div id="singleSeatMessage">
+        <p class="number">座位号:<span>5排6座</span></p>
+        <p class="price">票价:<span>336.00元</span></p>
+    </div>
     <footer class="comm-footer">
         <p>
             技术支持：喵票科技
@@ -200,17 +180,8 @@
 </div>
 <script src="lib/layui/layui.js"></script>
 <script>
-    layui.config({
-        base: "js/" //根目录
-    }).extend({
-        testCanvas:"testCanvas"
-    });
-
-    layui.use(['form',"jquery","testCanvas"],function(){
-        var form = layui.form;
-        var $ = layui.jquery;
-        layui.testCanvas($);
-    });
+    var data_seat = {"1":{"1":{"c":"1","t":"1","n":"","price":"476.00","color":"#f79646","seat_title":"1排1座","isSelected":false,"status":"1","isShow":false,"seat_id":"seat_id_1_1","seat":"1-1"},"2":{"c":"2","t":"0","n":"","price":"476.00","color":"#f79646","seat_title":"1排2座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_1_2","seat":"1-2"},"3":{"c":"3","t":"0","n":"","price":"476.00","color":"#f79646","seat_title":"1排3座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_1_3","seat":"1-3"},"4":{"c":"4","t":"0","n":"","price":"476.00","color":"#f79646","seat_title":"1排4座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_1_4","seat":"1-4"},"5":{"c":"5","t":"0","n":"","price":"476.00","color":"#f79646","seat_title":"1排5座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_1_5","seat":"1-5"},"6":{"c":"6","t":"0","n":"","price":"476.00","color":"#f79646","seat_title":"1排6座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_1_6","seat":"1-6"},"7":{"c":"7","t":"0","n":"","price":"476.00","color":"#f79646","seat_title":"1排7座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_1_7","seat":"1-7"},"8":{"c":"8","t":"0","n":"","price":"476.00","color":"#f79646","seat_title":"1排8座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_1_8","seat":"1-8"},"9":{"c":"9","t":"0","n":"","price":"476.00","color":"#f79646","seat_title":"1排9座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_1_9","seat":"1-9"},"10":{"c":"10","t":"0","n":"","price":"476.00","color":"#f79646","seat_title":"1排10座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_1_10","seat":"1-10"},"11":{"c":"11","t":"0","n":"","price":"476.00","color":"#f79646","seat_title":"1排11座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_1_11","seat":"1-11"},"12":{"c":"12","t":"1","n":"","price":"476.00","color":"#f79646","seat_title":"1排12座","isSelected":false,"status":"1","isShow":false,"seat_id":"seat_id_1_12","seat":"1-12"}},"2":{"1":{"c":"1","t":"0","n":"","price":"476.00","color":"#f79646","seat_title":"2排1座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_2_1","seat":"2-1"},"2":{"c":"2","t":"0","n":"","price":"476.00","color":"#f79646","seat_title":"2排2座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_2_2","seat":"2-2"},"3":{"c":"3","t":"0","n":"","price":"476.00","color":"#f79646","seat_title":"2排3座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_2_3","seat":"2-3"},"4":{"c":"4","t":"0","n":"","price":"476.00","color":"#f79646","seat_title":"2排4座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_2_4","seat":"2-4"},"5":{"c":"5","t":"0","n":"","price":"476.00","color":"#f79646","seat_title":"2排5座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_2_5","seat":"2-5"},"6":{"c":"6","t":"0","n":"","price":"476.00","color":"#f79646","seat_title":"2排6座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_2_6","seat":"2-6"},"7":{"c":"7","t":"0","n":"","price":"476.00","color":"#f79646","seat_title":"2排7座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_2_7","seat":"2-7"},"8":{"c":"8","t":"0","n":"","price":"476.00","color":"#f79646","seat_title":"2排8座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_2_8","seat":"2-8"},"9":{"c":"9","t":"0","n":"","price":"476.00","color":"#f79646","seat_title":"2排9座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_2_9","seat":"2-9"},"10":{"c":"10","t":"0","n":"","price":"476.00","color":"#f79646","seat_title":"2排10座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_2_10","seat":"2-10"},"11":{"c":"11","t":"0","n":"","price":"476.00","color":"#f79646","seat_title":"2排11座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_2_11","seat":"2-11"},"12":{"c":"12","t":"0","n":"","price":"476.00","color":"#f79646","seat_title":"2排12座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_2_12","seat":"2-12"}},"3":{"1":{"c":"1","t":"0","n":"","price":"476.00","color":"#f79646","seat_title":"3排1座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_3_1","seat":"3-1"},"2":{"c":"2","t":"0","n":"","price":"476.00","color":"#f79646","seat_title":"3排2座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_3_2","seat":"3-2"},"3":{"c":"3","t":"0","n":"","price":"476.00","color":"#f79646","seat_title":"3排3座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_3_3","seat":"3-3"},"4":{"c":"4","t":"0","n":"","price":"476.00","color":"#f79646","seat_title":"3排4座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_3_4","seat":"3-4"},"5":{"c":"5","t":"0","n":"","price":"476.00","color":"#f79646","seat_title":"3排5座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_3_5","seat":"3-5"},"6":{"c":"6","t":"0","n":"","price":"476.00","color":"#f79646","seat_title":"3排6座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_3_6","seat":"3-6"},"7":{"c":"7","t":"0","n":"","price":"476.00","color":"#f79646","seat_title":"3排7座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_3_7","seat":"3-7"},"8":{"c":"8","t":"0","n":"","price":"476.00","color":"#f79646","seat_title":"3排8座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_3_8","seat":"3-8"},"9":{"c":"9","t":"0","n":"","price":"476.00","color":"#f79646","seat_title":"3排9座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_3_9","seat":"3-9"},"10":{"c":"10","t":"0","n":"","price":"476.00","color":"#f79646","seat_title":"3排10座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_3_10","seat":"3-10"},"11":{"c":"11","t":"0","n":"","price":"476.00","color":"#f79646","seat_title":"3排11座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_3_11","seat":"3-11"},"12":{"c":"12","t":"0","n":"","price":"476.00","color":"#f79646","seat_title":"3排12座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_3_12","seat":"3-12"}},"4":{"1":{"c":"1","t":"0","n":"","price":"476.00","color":"#f79646","seat_title":"4排1座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_4_1","seat":"4-1"},"2":{"c":"2","t":"0","n":"","price":"476.00","color":"#f79646","seat_title":"4排2座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_4_2","seat":"4-2"},"3":{"c":"3","t":"0","n":"","price":"476.00","color":"#f79646","seat_title":"4排3座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_4_3","seat":"4-3"},"4":{"c":"4","t":"0","n":"","price":"476.00","color":"#f79646","seat_title":"4排4座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_4_4","seat":"4-4"},"5":{"c":"5","t":"0","n":"","price":"476.00","color":"#f79646","seat_title":"4排5座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_4_5","seat":"4-5"},"6":{"c":"6","t":"0","n":"","price":"476.00","color":"#f79646","seat_title":"4排6座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_4_6","seat":"4-6"},"7":{"c":"7","t":"1","n":"","price":"476.00","color":"#f79646","seat_title":"4排7座","isSelected":false,"status":"1","isShow":false,"seat_id":"seat_id_4_7","seat":"4-7"},"8":{"c":"8","t":"0","n":"","price":"476.00","color":"#f79646","seat_title":"4排8座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_4_8","seat":"4-8"},"9":{"c":"9","t":"0","n":"","price":"476.00","color":"#f79646","seat_title":"4排9座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_4_9","seat":"4-9"},"10":{"c":"10","t":"0","n":"","price":"476.00","color":"#f79646","seat_title":"4排10座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_4_10","seat":"4-10"},"11":{"c":"11","t":"0","n":"","price":"476.00","color":"#f79646","seat_title":"4排11座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_4_11","seat":"4-11"},"12":{"c":"12","t":"0","n":"","price":"476.00","color":"#f79646","seat_title":"4排12座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_4_12","seat":"4-12"}},"5":{"1":{"c":"1","t":"0","n":"","price":"336.00","color":"#4bacc6","seat_title":"5排1座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_5_1","seat":"5-1"},"2":{"c":"2","t":"0","n":"","price":"336.00","color":"#4bacc6","seat_title":"5排2座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_5_2","seat":"5-2"},"3":{"c":"3","t":"0","n":"","price":"336.00","color":"#4bacc6","seat_title":"5排3座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_5_3","seat":"5-3"},"4":{"c":"4","t":"0","n":"","price":"336.00","color":"#4bacc6","seat_title":"5排4座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_5_4","seat":"5-4"},"5":{"c":"5","t":"0","n":"","price":"336.00","color":"#4bacc6","seat_title":"5排5座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_5_5","seat":"5-5"},"6":{"c":"6","t":"0","n":"","price":"336.00","color":"#4bacc6","seat_title":"5排6座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_5_6","seat":"5-6"},"7":{"c":"7","t":"1","n":"","price":"336.00","color":"#4bacc6","seat_title":"5排7座","isSelected":false,"status":"1","isShow":false,"seat_id":"seat_id_5_7","seat":"5-7"},"8":{"c":"8","t":"0","n":"","price":"336.00","color":"#4bacc6","seat_title":"5排8座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_5_8","seat":"5-8"},"9":{"c":"9","t":"0","n":"","price":"336.00","color":"#4bacc6","seat_title":"5排9座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_5_9","seat":"5-9"},"10":{"c":"10","t":"0","n":"","price":"336.00","color":"#4bacc6","seat_title":"5排10座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_5_10","seat":"5-10"},"11":{"c":"11","t":"0","n":"","price":"336.00","color":"#4bacc6","seat_title":"5排11座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_5_11","seat":"5-11"},"12":{"c":"12","t":"0","n":"","price":"336.00","color":"#4bacc6","seat_title":"5排12座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_5_12","seat":"5-12"}},"6":{"1":{"c":"1","t":"0","n":"","price":"336.00","color":"#4bacc6","seat_title":"6排1座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_6_1","seat":"6-1"},"2":{"c":"2","t":"0","n":"","price":"336.00","color":"#4bacc6","seat_title":"6排2座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_6_2","seat":"6-2"},"3":{"c":"3","t":"0","n":"","price":"336.00","color":"#4bacc6","seat_title":"6排3座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_6_3","seat":"6-3"},"4":{"c":"4","t":"0","n":"","price":"336.00","color":"#4bacc6","seat_title":"6排4座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_6_4","seat":"6-4"},"5":{"c":"5","t":"0","n":"","price":"336.00","color":"#4bacc6","seat_title":"6排5座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_6_5","seat":"6-5"},"6":{"c":"6","t":"0","n":"","price":"336.00","color":"#4bacc6","seat_title":"6排6座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_6_6","seat":"6-6"},"7":{"c":"7","t":"1","n":"","price":"336.00","color":"#4bacc6","seat_title":"6排7座","isSelected":false,"status":"1","isShow":false,"seat_id":"seat_id_6_7","seat":"6-7"},"8":{"c":"8","t":"0","n":"","price":"336.00","color":"#4bacc6","seat_title":"6排8座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_6_8","seat":"6-8"},"9":{"c":"9","t":"0","n":"","price":"336.00","color":"#4bacc6","seat_title":"6排9座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_6_9","seat":"6-9"},"10":{"c":"10","t":"0","n":"","price":"336.00","color":"#4bacc6","seat_title":"6排10座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_6_10","seat":"6-10"},"11":{"c":"11","t":"0","n":"","price":"336.00","color":"#4bacc6","seat_title":"6排11座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_6_11","seat":"6-11"},"12":{"c":"12","t":"0","n":"","price":"336.00","color":"#4bacc6","seat_title":"6排12座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_6_12","seat":"6-12"}},"7":{"1":{"c":"1","t":"0","n":"","price":"336.00","color":"#4bacc6","seat_title":"7排1座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_7_1","seat":"7-1"},"2":{"c":"2","t":"0","n":"","price":"336.00","color":"#4bacc6","seat_title":"7排2座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_7_2","seat":"7-2"},"3":{"c":"3","t":"0","n":"","price":"336.00","color":"#4bacc6","seat_title":"7排3座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_7_3","seat":"7-3"},"4":{"c":"4","t":"0","n":"","price":"336.00","color":"#4bacc6","seat_title":"7排4座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_7_4","seat":"7-4"},"5":{"c":"5","t":"0","n":"","price":"336.00","color":"#4bacc6","seat_title":"7排5座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_7_5","seat":"7-5"},"6":{"c":"6","t":"0","n":"","price":"336.00","color":"#4bacc6","seat_title":"7排6座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_7_6","seat":"7-6"},"7":{"c":"7","t":"1","n":"","price":"336.00","color":"#4bacc6","seat_title":"7排7座","isSelected":false,"status":"1","isShow":false,"seat_id":"seat_id_7_7","seat":"7-7"},"8":{"c":"8","t":"0","n":"","price":"336.00","color":"#4bacc6","seat_title":"7排8座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_7_8","seat":"7-8"},"9":{"c":"9","t":"0","n":"","price":"336.00","color":"#4bacc6","seat_title":"7排9座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_7_9","seat":"7-9"},"10":{"c":"10","t":"0","n":"","price":"336.00","color":"#4bacc6","seat_title":"7排10座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_7_10","seat":"7-10"},"11":{"c":"11","t":"0","n":"","price":"336.00","color":"#4bacc6","seat_title":"7排11座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_7_11","seat":"7-11"},"12":{"c":"12","t":"0","n":"","price":"336.00","color":"#4bacc6","seat_title":"7排12座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_7_12","seat":"7-12"}},"8":{"1":{"c":"1","t":"0","n":"","price":"336.00","color":"#4bacc6","seat_title":"8排1座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_8_1","seat":"8-1"},"2":{"c":"2","t":"0","n":"","price":"336.00","color":"#4bacc6","seat_title":"8排2座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_8_2","seat":"8-2"},"3":{"c":"3","t":"0","n":"","price":"336.00","color":"#4bacc6","seat_title":"8排3座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_8_3","seat":"8-3"},"4":{"c":"4","t":"0","n":"","price":"336.00","color":"#4bacc6","seat_title":"8排4座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_8_4","seat":"8-4"},"5":{"c":"5","t":"0","n":"","price":"336.00","color":"#4bacc6","seat_title":"8排5座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_8_5","seat":"8-5"},"6":{"c":"6","t":"0","n":"","price":"336.00","color":"#4bacc6","seat_title":"8排6座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_8_6","seat":"8-6"},"7":{"c":"7","t":"1","n":"","price":"336.00","color":"#4bacc6","seat_title":"8排7座","isSelected":false,"status":"1","isShow":false,"seat_id":"seat_id_8_7","seat":"8-7"},"8":{"c":"8","t":"0","n":"","price":"336.00","color":"#4bacc6","seat_title":"8排8座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_8_8","seat":"8-8"},"9":{"c":"9","t":"0","n":"","price":"336.00","color":"#4bacc6","seat_title":"8排9座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_8_9","seat":"8-9"},"10":{"c":"10","t":"0","n":"","price":"336.00","color":"#4bacc6","seat_title":"8排10座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_8_10","seat":"8-10"},"11":{"c":"11","t":"0","n":"","price":"336.00","color":"#4bacc6","seat_title":"8排11座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_8_11","seat":"8-11"},"12":{"c":"12","t":"0","n":"","price":"336.00","color":"#4bacc6","seat_title":"8排12座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_8_12","seat":"8-12"}},"9":{"1":{"c":"1","t":"0","n":"","price":"336.00","color":"#4bacc6","seat_title":"9排1座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_9_1","seat":"9-1"},"2":{"c":"2","t":"0","n":"","price":"336.00","color":"#4bacc6","seat_title":"9排2座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_9_2","seat":"9-2"},"3":{"c":"3","t":"0","n":"","price":"336.00","color":"#4bacc6","seat_title":"9排3座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_9_3","seat":"9-3"},"4":{"c":"4","t":"0","n":"","price":"336.00","color":"#4bacc6","seat_title":"9排4座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_9_4","seat":"9-4"},"5":{"c":"5","t":"0","n":"","price":"336.00","color":"#4bacc6","seat_title":"9排5座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_9_5","seat":"9-5"},"6":{"c":"6","t":"0","n":"","price":"336.00","color":"#4bacc6","seat_title":"9排6座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_9_6","seat":"9-6"},"7":{"c":"7","t":"1","n":"","price":"336.00","color":"#4bacc6","seat_title":"9排7座","isSelected":false,"status":"1","isShow":false,"seat_id":"seat_id_9_7","seat":"9-7"},"8":{"c":"8","t":"0","n":"","price":"336.00","color":"#4bacc6","seat_title":"9排8座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_9_8","seat":"9-8"},"9":{"c":"9","t":"0","n":"","price":"336.00","color":"#4bacc6","seat_title":"9排9座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_9_9","seat":"9-9"},"10":{"c":"10","t":"0","n":"","price":"336.00","color":"#4bacc6","seat_title":"9排10座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_9_10","seat":"9-10"},"11":{"c":"11","t":"0","n":"","price":"336.00","color":"#4bacc6","seat_title":"9排11座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_9_11","seat":"9-11"},"12":{"c":"12","t":"0","n":"","price":"336.00","color":"#4bacc6","seat_title":"9排12座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_9_12","seat":"9-12"}},"10":{"1":{"c":"1","t":"1","n":"","price":null,"color":null,"seat_title":"10排1座","isSelected":false,"status":"1","isShow":false,"seat_id":"seat_id_10_1","seat":"10-1"},"2":{"c":"2","t":"1","n":"","price":null,"color":null,"seat_title":"10排2座","isSelected":false,"status":"1","isShow":false,"seat_id":"seat_id_10_2","seat":"10-2"},"3":{"c":"3","t":"1","n":"","price":null,"color":null,"seat_title":"10排3座","isSelected":false,"status":"1","isShow":false,"seat_id":"seat_id_10_3","seat":"10-3"},"4":{"c":"4","t":"1","n":"","price":null,"color":null,"seat_title":"10排4座","isSelected":false,"status":"1","isShow":false,"seat_id":"seat_id_10_4","seat":"10-4"},"5":{"c":"5","t":"1","n":"","price":null,"color":null,"seat_title":"10排5座","isSelected":false,"status":"1","isShow":false,"seat_id":"seat_id_10_5","seat":"10-5"},"6":{"c":"6","t":"1","n":"","price":null,"color":null,"seat_title":"10排6座","isSelected":false,"status":"1","isShow":false,"seat_id":"seat_id_10_6","seat":"10-6"},"7":{"c":"7","t":"1","n":"","price":null,"color":null,"seat_title":"10排7座","isSelected":false,"status":"1","isShow":false,"seat_id":"seat_id_10_7","seat":"10-7"},"8":{"c":"8","t":"1","n":"","price":null,"color":null,"seat_title":"10排8座","isSelected":false,"status":"1","isShow":false,"seat_id":"seat_id_10_8","seat":"10-8"},"9":{"c":"9","t":"1","n":"","price":null,"color":null,"seat_title":"10排9座","isSelected":false,"status":"1","isShow":false,"seat_id":"seat_id_10_9","seat":"10-9"},"10":{"c":"10","t":"1","n":"","price":null,"color":null,"seat_title":"10排10座","isSelected":false,"status":"1","isShow":false,"seat_id":"seat_id_10_10","seat":"10-10"},"11":{"c":"11","t":"1","n":"","price":null,"color":null,"seat_title":"10排11座","isSelected":false,"status":"1","isShow":false,"seat_id":"seat_id_10_11","seat":"10-11"},"12":{"c":"12","t":"1","n":"","price":null,"color":null,"seat_title":"10排12座","isSelected":false,"status":"1","isShow":false,"seat_id":"seat_id_10_12","seat":"10-12"}},"11":{"1":{"c":"1","t":"0","n":"","price":"0.01","color":"#c0504d","seat_title":"11排1座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_11_1","seat":"11-1"},"2":{"c":"2","t":"0","n":"","price":"0.01","color":"#c0504d","seat_title":"11排2座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_11_2","seat":"11-2"},"3":{"c":"3","t":"0","n":"","price":"0.01","color":"#c0504d","seat_title":"11排3座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_11_3","seat":"11-3"},"4":{"c":"4","t":"0","n":"","price":"0.01","color":"#c0504d","seat_title":"11排4座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_11_4","seat":"11-4"},"5":{"c":"5","t":"0","n":"","price":"0.01","color":"#c0504d","seat_title":"11排5座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_11_5","seat":"11-5"},"6":{"c":"6","t":"0","n":"","price":"0.01","color":"#c0504d","seat_title":"11排6座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_11_6","seat":"11-6"},"7":{"c":"7","t":"0","n":"","price":"0.01","color":"#c0504d","seat_title":"11排7座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_11_7","seat":"11-7"},"8":{"c":"8","t":"0","n":"","price":"0.01","color":"#c0504d","seat_title":"11排8座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_11_8","seat":"11-8"},"9":{"c":"9","t":"0","n":"","price":"0.01","color":"#c0504d","seat_title":"11排9座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_11_9","seat":"11-9"},"10":{"c":"10","t":"0","n":"","price":"0.01","color":"#c0504d","seat_title":"11排10座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_11_10","seat":"11-10"},"11":{"c":"11","t":"0","n":"","price":"0.01","color":"#c0504d","seat_title":"11排11座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_11_11","seat":"11-11"},"12":{"c":"12","t":"0","n":"","price":"0.01","color":"#c0504d","seat_title":"11排12座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_11_12","seat":"11-12"}},"12":{"1":{"c":"1","t":"0","n":"","price":"0.01","color":"#c0504d","seat_title":"12排1座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_12_1","seat":"12-1"},"2":{"c":"2","t":"0","n":"","price":"0.01","color":"#c0504d","seat_title":"12排2座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_12_2","seat":"12-2"},"3":{"c":"3","t":"0","n":"","price":"0.01","color":"#c0504d","seat_title":"12排3座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_12_3","seat":"12-3"},"4":{"c":"4","t":"0","n":"","price":"0.01","color":"#c0504d","seat_title":"12排4座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_12_4","seat":"12-4"},"5":{"c":"5","t":"0","n":"","price":"0.01","color":"#c0504d","seat_title":"12排5座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_12_5","seat":"12-5"},"6":{"c":"6","t":"0","n":"","price":"0.01","color":"#c0504d","seat_title":"12排6座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_12_6","seat":"12-6"},"7":{"c":"7","t":"0","n":"","price":"0.01","color":"#c0504d","seat_title":"12排7座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_12_7","seat":"12-7"},"8":{"c":"8","t":"0","n":"","price":"0.01","color":"#c0504d","seat_title":"12排8座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_12_8","seat":"12-8"},"9":{"c":"9","t":"0","n":"","price":"0.01","color":"#c0504d","seat_title":"12排9座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_12_9","seat":"12-9"},"10":{"c":"10","t":"0","n":"","price":"0.01","color":"#c0504d","seat_title":"12排10座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_12_10","seat":"12-10"},"11":{"c":"11","t":"0","n":"","price":"0.01","color":"#c0504d","seat_title":"12排11座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_12_11","seat":"12-11"},"12":{"c":"12","t":"0","n":"","price":"0.01","color":"#c0504d","seat_title":"12排12座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_12_12","seat":"12-12"}},"13":{"1":{"c":"1","t":"1","n":"","price":"0.01","color":"#c0504d","seat_title":"13排1座","isSelected":false,"status":"1","isShow":false,"seat_id":"seat_id_13_1","seat":"13-1"},"2":{"c":"2","t":"1","n":"","price":"0.01","color":"#c0504d","seat_title":"13排2座","isSelected":false,"status":"1","isShow":false,"seat_id":"seat_id_13_2","seat":"13-2"},"3":{"c":"3","t":"0","n":"","price":"0.01","color":"#c0504d","seat_title":"13排3座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_13_3","seat":"13-3"},"4":{"c":"4","t":"0","n":"","price":"0.01","color":"#c0504d","seat_title":"13排4座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_13_4","seat":"13-4"},"5":{"c":"5","t":"0","n":"","price":"0.01","color":"#c0504d","seat_title":"13排5座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_13_5","seat":"13-5"},"6":{"c":"6","t":"0","n":"","price":"0.01","color":"#c0504d","seat_title":"13排6座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_13_6","seat":"13-6"},"7":{"c":"7","t":"0","n":"","price":"0.01","color":"#c0504d","seat_title":"13排7座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_13_7","seat":"13-7"},"8":{"c":"8","t":"0","n":"","price":"0.01","color":"#c0504d","seat_title":"13排8座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_13_8","seat":"13-8"},"9":{"c":"9","t":"0","n":"","price":"0.01","color":"#c0504d","seat_title":"13排9座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_13_9","seat":"13-9"},"10":{"c":"10","t":"0","n":"","price":"0.01","color":"#c0504d","seat_title":"13排10座","isSelected":false,"status":"0","isShow":true,"seat_id":"seat_id_13_10","seat":"13-10"},"11":{"c":"11","t":"1","n":"","price":"0.01","color":"#c0504d","seat_title":"13排11座","isSelected":false,"status":"1","isShow":false,"seat_id":"seat_id_13_11","seat":"13-11"},"12":{"c":"12","t":"1","n":"","price":"0.01","color":"#c0504d","seat_title":"13排12座","isSelected":false,"status":"1","isShow":false,"seat_id":"seat_id_13_12","seat":"13-12"}}};
 </script>
+<script src="js/app.js"></script>
 </body>
 </html>

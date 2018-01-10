@@ -1,9 +1,0 @@
-#focus { width: 100%; height: auto; position: relative; overflow: hidden; }
-#focus .hd { width: 100%; height: 0.8em; position: absolute; z-index: 1; text-align: center; bottom: 0.5em; }
-#focus .hd ul { display: inline-block; height: 0.8em; }
-#focus .hd ul li { display: inline-block; width: 0.6em; height: 0.6em; text-indent: -999em; background: rgba(255, 255, 255, 0.8); margin: 0 0.3em; vertical-align: top; overflow: hidden; border-radius: 100%; -moz-border-radius: 100%; -webkit-border-radius: 100%; -o-border-radius: 100%; }
-#focus .hd ul .on { background: #008CFF; }
-#focus .bd { position: relative; z-index: 0; }
-#focus .bd li { height: auto; overflow: hidden; }
-#focus .bd li a img { width: 100%; height: auto; display: block; margin: 0; padding: 0;display: table-cell;vertical-align: middle; }
-#focus .bd li a { -webkit-tap-highlight-color: rgba(0, 0, 0, 0);/* 取消链接高亮 */ }

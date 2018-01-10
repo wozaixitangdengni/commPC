@@ -8,10 +8,17 @@ body {
   min-height: 100%;
 }
 .comm-head {
-  height: 138px;
-  background-image: url(../images/banner01.png);
-  background-position: 50%;
-  background-repeat: no-repeat;
+  overflow: hidden;
+}
+.comm-head img {
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0%);
+  -moz-transform: translate(-50%, 0%);
+  -ms-transform: translate(-50%, 0%);
+  transform: translate(-50%, 0%);
 }
 .comm-footer {
   font-size: 12px;
@@ -258,6 +265,7 @@ input[type="number"] {
   color: #F90606;
   height: 100%;
   margin-left: 560px;
+  display: none;
 }
 .use-info .use-info-left .use-info-left-box .use-info-update {
   padding: 10px 0;
@@ -267,6 +275,7 @@ input[type="number"] {
   color: #696969;
 }
 .use-info .use-info-left .use-info-left-box .use-info-update .use-info-update-title span {
+  display: none;
   color: #F91212;
   padding-left: 10px;
 }
@@ -449,7 +458,7 @@ input[type="number"] {
   height: 100%;
   background-color: #E9E9E9;
 }
-.use-info .use-info-left .use-info-left-box .ticket-count-box .ticket-count-btn input {
+.use-info .use-info-left .use-info-left-box .ticket-count-box .ticket-count-btn div {
   padding: 0;
   background-color: #fff;
   text-align: center;
@@ -592,6 +601,7 @@ input[type="number"] {
   color: #fff;
 }
 .use-info-submit .use-info-submit-main .use-info-submit-submit {
+  cursor: pointer;
   width: 175px;
   height: 40px;
   -webkit-border-radius: 3px;
@@ -965,7 +975,6 @@ input[type="number"] {
   font-size: 14px;
 }
 .select-area .select-area-main {
-  height: 500px;
   min-height: 500px;
   padding-top: 20px;
   position: relative;
@@ -1185,4 +1194,60 @@ input[type="number"] {
   box-sizing: border-box;
   position: relative;
   z-index: 1;
+}
+.top-msg {
+  display: none;
+}
+.top-msg .mask {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 999;
+}
+.top-msg .mask-main {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  width: 350px;
+  height: 100px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  background-color: #fff;
+}
+.top-msg .mask-main .mask-title {
+  font-size: 14px;
+  text-align: center;
+  padding: 20px 0 15px;
+  color: #767676;
+}
+.top-msg .mask-main .mask-loading {
+  text-align: center;
+  height: 30px;
+}
+.top-msg .mask-main .mask-loading img {
+  height: 100%;
+}
+#singleSeatMessage {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  width: 140px;
+  position: fixed;
+  z-index: 10000;
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+#singleSeatMessage > p {
+  font-size: 14px;
+  padding-bottom: 5px;
 }

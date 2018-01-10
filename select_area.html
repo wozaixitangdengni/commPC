@@ -19,6 +19,7 @@
 <body>
 <div class="comm">
     <header class="comm-head">
+        <img src="images/banner01.png" alt=""/>
     </header>
     <div class="buy-ticket-status">
         <!--
@@ -53,109 +54,7 @@
             <div class="select-area-main">
                 <div class="select-area-ticket-dcs">
                     <div class="area-min">
-                        <section class="seat_main test" style="display:none;max-width: 750px;margin: 0 auto;">
-                            <div class="container">
-                                <div class="title">位置分区</div>
 
-                                <!--一层-->
-                                <div class="box_main box_main1">
-                                    <div class="desc">一层</div>
-
-
-                                    <!--A区-->
-                                    <div class="seatlink zwleft">
-                                        <a  data-id="4_a" href="javascript:;" data-nid="4"></a>
-                                    </div>
-                                    <!--B区-->
-                                    <div class="seatlink zwcontent">
-                                        <a  data-id="5_b" href="javascript:;" data-nid="5"></a>
-                                    </div>
-                                    <!--C区-->
-                                    <div class="seatlink zwright">
-                                        <a data-id="6_c" href="javascript:;" data-nid="6"></a>
-                                    </div>
-
-                                    <!--舞台-->
-                                    <div class="bt">
-                                        <a href="javascript:;"></a>
-                                    </div>
-
-
-                                </div>
-
-
-                                <!--二层-->
-                                <div class="box_main box_main2" style="background-size: 378px 180px;">
-
-
-
-                                    <div class="pr content" style="width: 320px;position: relative;margin: 0 auto;height: 200px;">
-
-                                        <div class="desc">二层</div>
-                                        <!--D区-->
-                                        <div class="seatlink zwleft">
-                                            <a data-id="7_d" href="{:U('Movies/seat',array('id'=>7,'season_id'=>$season_id))}" data-nid="7"></a>
-                                        </div>
-                                        <!--E区-->
-                                        <div class="seatlink zwcontent">
-                                            <a data-id="8_e" href="{:U('Movies/seat',array('id'=>8,'season_id'=>$season_id))}" data-nid="8"></a>
-                                        </div>
-                                        <!--F区-->
-                                        <div class="seatlink zwright">
-                                            <a data-id="9_f" href="{:U('Movies/seat',array('id'=>9,'season_id'=>$season_id))}" data-nid="9"></a>
-                                        </div>
-                                        <!--g区-->
-                                        <div class="seatlink zwbottom">
-                                            <a data-id="10_g" href="{:U('Movies/seat',array('id'=>10,'season_id'=>$season_id))}" data-nid="10"></a>
-                                        </div>
-
-                                        <!--舞台-->
-                                        <div class="bt">
-                                            <a href="javascript:;" style="bottom: 20px"></a>
-                                        </div>
-                                    </div>
-
-
-                                </div>
-                            </div>
-                            <style>
-                                .box_main1 .zwleft a.active{
-                                    background: url(area/luzhou/images/A2.png) no-repeat center;
-                                    -webkit-background-size: cover;
-                                    background-size: cover;
-                                }
-                                .box_main1 .zwcontent a.active{
-                                    background: url(area/luzhou/images/B2.png) no-repeat center;
-                                    -webkit-background-size: cover;
-                                    background-size: cover;
-                                }
-                                .box_main1 .zwright a.active{
-                                    background: url(area/luzhou/images/C2.png) no-repeat center;
-                                    -webkit-background-size: cover;
-                                    background-size: cover;
-                                }
-                                .box_main2 .zwleft a.active{
-                                    background: url(area/luzhou/images/D2.png) no-repeat center;
-                                    -webkit-background-size: 80px 60px;
-                                    background-size: 80px 60px;
-                                }
-                                .box_main2 .zwcontent a.active{
-                                    background: url(area/luzhou/images/E2.png) no-repeat center;
-                                    -webkit-background-size: 90px 50px;
-                                    background-size: 90px 50px;
-                                }
-                                .box_main2 .zwright a.active{
-                                    background: url(area/luzhou/images/F2.png) no-repeat center;
-                                    -webkit-background-size: 80px 60px;
-                                    background-size: 80px 60px;
-                                }
-                                .box_main2 .zwbottom a.active{
-                                    background: url(area/luzhou/images/G2.png) no-repeat center;
-                                    -webkit-background-size: 300px 54px;
-                                    background-size: 300px 54px;
-                                }
-                            </style>
-                        </section>
                     </div>
                     <p class="title">
                         票价说明：
@@ -309,12 +208,6 @@
     </footer>
 </div>
 <script src="lib/layui/layui.js"></script>
-<script>
-
-    layui.use(['form',"jquery"],function(){
-        var form = layui.form;
-        var $ = layui.jquery;
-    });
-</script>
+<script src="js/app.js"></script>
 </body>
 </html>

@@ -105,26 +105,21 @@ layui.define(function (exports) {
                 this.canvas.onmouseup = this.dragCanvasEnd.bind(this);
                 this.canvas.addEventListener("mouseout",function(){$("#singleSeatMessage").hide();} , false);
 
-
-                $.ajax({
-                    url:'seatData.json',
-                    success:function(res){
-                        _this.seatData = res;
-                        _this.seatCount.r = 0;
-                        _this.seatCount.c = 0;
-                        for(var r in res){
-                            var c_data = res[r];
-                            r = parseFloat(r);
-                            _this.seatCount.r>r?void 0:(_this.seatCount.r = r);
-                            for(var c in c_data){
-                                c = parseFloat(c);
-                                _this.seatCount.c>c?void 0:(_this.seatCount.c = c);
-                            }
+                if(data_seat){
+                    _this.seatData = data_seat;
+                    _this.seatCount.r = 0;
+                    _this.seatCount.c = 0;
+                    for(var r in data_seat){
+                        var c_data = data_seat[r];
+                        r = parseFloat(r);
+                        _this.seatCount.r>r?void 0:(_this.seatCount.r = r);
+                        for(var c in c_data){
+                            c = parseFloat(c);
+                            _this.seatCount.c>c?void 0:(_this.seatCount.c = c);
                         }
-                        _this.setMaxMin();
-                        //console.log(seatData,_this.seatCount.r,_this.seatCount.c);
                     }
-                });
+                    _this.setMaxMin();
+                }
             },
             imgLoad:function(){
                 var _this = this;
@@ -334,6 +329,7 @@ layui.define(function (exports) {
                     });
                     $(".select-area .select-area-main .select-area-area .selected_seat").show();
                 }
+                $(".select-area .select-area-main .select-area-area .selected_seat .title span").text(_this.selectedSeat.length);
             },
             showSeatMsg:function(e,seat){
                 var posObj = this.canvas.getBoundingClientRect();
@@ -346,11 +342,17 @@ layui.define(function (exports) {
                 var top = window_to_canvas_top + e.offsetY + 10;
                 var left = window_to_canvas_width + e.offsetX -10;
 
-                if(this.canvas.width - e.offsetX < 100){
-                    left -=100;
+                if(this.canvas.width - e.offsetX < 140){
+                    left -=140;
                 }
-
-                $("#singleSeatMessage").show().css({top:top,left:left}).text(seat.seat);
+                if(this.canvas.height - e.offsetY < 55){
+                    top -=55;
+                    top -=20;
+                }
+                var el = $("#singleSeatMessage");
+                el.show().css({top:top,left:left});
+                el.find(".number >span").text(seat.seat_title);
+                el.find(".price >span").text(seat.price+'元');
 
             },
             //开始移动

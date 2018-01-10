@@ -9,6 +9,7 @@
 <body>
 <div class="comm">
     <header class="comm-head">
+        <img src="images/banner01.png" alt=""/>
     </header>
     <div class="buy-ticket-status">
         <!--
@@ -34,7 +35,7 @@
     <main class="comm-wrap">
         <div class="select-pay-title">
             <p>选择支付方式</p>
-            <p>请您在 <span>13 分 40 秒</span> 内支付完成, 超时订单会自动取消。</p>
+            <p>请您在 <span data-time>13 分 40 秒</span> 内支付完成, 超时订单会自动取消。</p>
         </div>
         <form action="">
             <div class="select-pay-main">
@@ -60,14 +61,27 @@
     </footer>
 </div>
 <script src="lib/layui/layui.js"></script>
+<script src="js/app.js"></script>
 <script>
-
-    layui.use(['form',"jquery"],function(){
-        var form = layui.form;
+    var time = 1800;
+    layui.use("jquery",function(){
         var $ = layui.jquery;
-        $(".select-pay-main").on("click",'label',function(){
-            $(this).parent().addClass("selected").siblings(".selected").removeClass("selected");
-        });
+        $(".select-pay-title > p:last-child span");
+
+        function getTime(){
+            var f = parseInt(time/60);
+            var m = time%60;
+            m = m<10?'0'+m:m;
+            f = f<10?'0'+f:f;
+            $('[data-time]').text(f+' 分 '+m+' 秒');
+        }
+        var timeId = setInterval(function(){
+            getTime();
+            time--;
+            if(time<1){
+                clearInterval(timeId);
+            }
+        },1000);
     });
 </script>
 </body>
