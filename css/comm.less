@@ -260,10 +260,10 @@ input[type="number"]{-moz-appearance:textfield;}
             vertical-align: middle;
             position: relative;
             overflow: hidden;
-            -webkit-transition: all 1s ease-out;
-            -moz-transition: all 1s ease-out;
-            -o-transition: all 1s ease-out;
-            transition: all 1s ease-out;
+            //-webkit-transition: all 1s ease-out;
+            //-moz-transition: all 1s ease-out;
+            //-o-transition: all 1s ease-out;
+            //transition: all 1s ease-out;
             &:hover{
               .use-info-update-img-item-del{
                 bottom: 0;
@@ -285,6 +285,14 @@ input[type="number"]{-moz-appearance:textfield;}
               i{
                 color:red;
               }
+            }
+            .upload-cancel{
+              position: absolute;
+              width: 20px;
+              height: 20px;
+              background-position: 50%;
+              background-size: contain;background-image: url(../images/cancel.png);
+              right: 0;
             }
             img{
               max-width: 100%;

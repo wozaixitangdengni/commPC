@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <include file="./themes/simplebootx/Filmpc/Public/head.html" />
+</head>
+<body>
+<div class="comm">
+    <header class="comm-head">
+        <img src="__pub__/images/banner01.png" alt=""/>
+    </header>
+    <!-- 支付宝支付-->
+    <!--<main class="comm-wrap">-->
+        <!--<div class="pay">-->
+            <!--<p class="pay-title zhi-fu-bao">-->
+                <!--<img src="__pub__/images/zhi_fu_bao.png" alt=""/>-->
+            <!--</p>-->
+            <!--<div class="pay-msg">-->
+                <!--<div class="pay-order-msg">-->
+                    <!--<p><span>订&nbsp;&nbsp;单&nbsp;&nbsp;号:</span>{$info.order_no}</p>-->
+                    <!--<p><span>订单时间:</span>{$info.ordertime|date="Y-m-d H:i:s",###}</p>-->
+                    <!--<p><span>商品信息:</span>{$film[0].title}    {$film[0].p_title} x{$info.num}</p>-->
+                <!--</div>-->
+                <!--<div class="pay-time">-->
+                    <!--<br/>-->
+                    <!--<p>您正在使用即时到账交易   交易将在 <span>{$last_time} 14分钟后</span>关闭，请及时付款！</p>-->
+                    <!--<p>收款方：广州喵票科技有限公司</p>-->
+                <!--</div>-->
+                <!--<div class="pay-price zhi-fu-bao">-->
+                    <!--<p><span>{$info.price}</span>元</p>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="pay-main">-->
+                <!--<div class="pay-zhi-bu-bao">-->
+                    <!--<p class="pay-zhi-bu-bao-title">扫一扫付款（元）</p>-->
+                    <!--<p class="pay-money">{$info.price}</p>-->
+                    <!--<div class="pay-zhi-bu-bao-main">-->
+                        <!--<img src="__pub__/images/zhi-fu-bao-code.png" alt=""/>-->
+                        <!--<img src="__pub__/images/zhi-fu-bao-msg.png" class="zhi-fu-bao-msg" alt=""/>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</main>-->
+    <!-- 微信支付-->
+    <main class="comm-wrap">
+        <div class="pay">
+            <p class="pay-title pay-we-chat">
+                <img src="__pub__/images/wei_chat.png" alt=""/>
+            </p>
+            <div class="pay-msg">
+                <div class="pay-order-msg">
+                    <p><span>订&nbsp;&nbsp;单&nbsp;&nbsp;号:</span>{$info.order_no}</p>
+                    <p><span>订单时间:</span>{$info.ordertime|date="Y-m-d H:i:s",###}</p>
+                    <p><span>商品信息:</span>{$film[0].title}    {$film[0].p_title} x{$info.num}</p>
+                </div>
+                <div class="pay-time">
+                    <br/>
+                    <p>您正在使用即时到账交易   交易将在 <span>{$last_time} 14分钟后</span>关闭，请及时付款！</p>
+                    <p>收款方：广州喵票科技有限公司</p>
+                </div>
+                <div class="pay-price we-chat">
+                    <p><span>{$info.price}</span>元</p>
+                </div>
+            </div>
+            <div class="pay-main">
+                <div class="pay-we-chat">
+                    <div class="pay-we-chat-left">
+                        <img src="__pub__/images/we-chat-pay-left.png" alt=""/>
+                    </div>
+                    <div class="pay-we-chat-right">
+                        <p id="qrcode_1"></p>
+                        <script type="text/javascript" src="__PUBLIC__/js/qrcode.min.js"></script>
+                        <script type="text/javascript">
+                            var qrcode = new QRCode(document.getElementById("qrcode_1"), {
+                                width : 100,
+                                height : 100
+                            });
+                            function makeCode () {
+                                qrcode.makeCode("{$url}");
+                            }
+                            makeCode();
+                        </script>
+                        <img src="__pub__/images/we-chat-pay-msg.png" class="we-chat-pay-msg" alt=""/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <include file="./themes/simplebootx/Filmpc/Public/footer.html" />
+</div>
+<script src="__pub__/lib/layui/layui.js"></script>
+<script src="__pub__/js/app.js"></script>
+</body>
+</html>

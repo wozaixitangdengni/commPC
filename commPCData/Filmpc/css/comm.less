@@ -1,0 +1,1039 @@
+@import "style";
+
+html,body{
+  min-height: 100%;
+  height: 100%;
+}
+
+.comm{
+  background-color: #F5F5F5;
+  min-height: 100%;
+}
+
+.comm-head{
+  //height: 138px;
+  //background-image: url(../images/banner01.png);
+  //background-position: 50%;
+  //background-repeat: no-repeat;
+  overflow: hidden;
+  img{
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    left: 50%;
+    -webkit-transform: translate(-50%,0%);
+    -moz-transform: translate(-50%,0%);
+    -ms-transform: translate(-50%,0%);
+    transform: translate(-50%,0%);
+  }
+}
+
+.comm-footer{
+  font-size: 12px;
+  text-align: center;
+  height: 80px;
+  line-height: 80px;
+  color:#666666;
+}
+
+.marget-1100(){
+  width: 1100px;
+  margin: 0 auto;
+}
+
+.buy-ticket-status{
+  .display_flex();
+  .jcs();
+  .marget-1100();
+  padding: 20px 0;
+  padding-bottom: 50px;
+  .buy-ticket-item{
+    text-align: center;
+    .flex(1);
+    .buy-ticket-item-title{
+      color:#888888;
+    }
+    &>p{
+      .width_calc(10px);
+      margin: 0 auto;
+      margin-top: 17px;
+      height: 6px;
+      .border_radius(3px);
+      position: relative;
+      background-color: #DCDCDC;
+      >span{
+        width: 24px;
+        height: 24px;
+        text-align: center;
+        line-height: 24px;
+        border: 1px solid #DCDCDC;
+        background-color: #fff;
+        color:#666;
+        font-size: 14px;
+        .position_a();
+        .border_radius(50%)
+      }
+    }
+    /*
+      已完成的流程
+    */
+    &.active{
+      .buy-ticket-item-title{
+        color:#EB6100;
+      }
+      &>p{
+        background-color: #EB6100;
+        >span{
+          z-index: 1;
+          border: none;
+          &:after{
+            content: "";
+            display: block;
+            .position_a();
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+            background-image: url(../images/wan_cheng_icon.png);
+            background-repeat: no-repeat;
+            background-position: 50%;
+            background-size: contain;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+/*
+  填写信息页面
+*/
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button{
+  -webkit-appearance: none !important;
+  margin: 0;
+}
+
+input[type="number"]{-moz-appearance:textfield;}
+
+/*填写资料样式*/
+.use-info{
+  .marget-1100();
+  &:before,&:after{
+    content: "";
+    display: block;
+    clear: both;
+  }
+  .use-info-left{
+    width: 762px;
+    float: left;
+    .use-info-left-box{
+      .border_radius(3px);
+      background-color: #fff;
+      padding-top: 5px;
+      padding-left: 30px;
+      padding-bottom: 30px;
+      margin-bottom: 20px;
+      .use-info-left-box-title{
+        padding: 10px;
+        color:#EB6100;
+        font-size: 18px;
+        margin-right: 30px;
+        border-bottom: 1px solid #F0F0F0;
+      }
+      .use-info-input-box{
+        height: 40px;
+        line-height: 40px;
+        padding: 10px 0;
+        .use-info-input-title{
+          width: 85px;
+          color:#767676;
+          float: left;
+          height: 100%;
+          text-align: center;
+          letter-spacing: 3px;
+        }
+        .use-info-input-main{
+          width: 455px;
+          margin-left: 10px;
+          float: left;
+          height: 100%;
+          position: relative;
+          //z-index: 1;
+          &>input,&>select{
+            width: 100%;
+            height: 100%;
+            border: none;
+            outline: none;
+            color:#757575;
+            background-color: #F3F3F3;
+            padding: 0 40px 0 30px;
+            .box_sizing();
+            &+span{
+              display: inline-block;
+              width: 40px;
+              height: 40px;
+              background-color: #E9E9E9;
+              background-repeat: no-repeat;
+              background-position: 50%;
+              position: absolute;
+              z-index: 2;
+              right: 0;
+              top:0;
+              &.rili{
+                background-image: url(../images/rili.png);
+              }
+              &.select{
+                background-image: url(../images/selected_time.png);
+              }
+            }
+          }
+          /*获取验证码样式*/
+          &.get_code{
+            &>input{
+              width: 310px;
+              float: left;
+            }
+            .get_code_btn{
+              display: block;
+              height: 100%;
+              margin-left: 330px;
+              text-align: center;
+              background-color: #EB6100;
+              color:#fff;
+              font-size: 13px;
+              cursor: pointer;
+              &.on{
+                background-color: #a5a5a5;
+              }
+              img{
+                vertical-align: bottom;
+                width: 100%;
+                height: 100%;
+                max-width: 100%;
+              }
+            }
+
+          }
+          &.selects{
+            .display_flex();
+            .align_items(center);
+            .jcs();
+            &>select{
+              &:not(:last-child){
+                margin-right: 10px;
+              }
+            }
+            &>.layui-unselect.layui-form-select{
+              &:not(:last-child){
+                margin-right: 10px;
+              }
+            }
+            .layui-input.layui-unselect{
+              padding-left: 10px;
+            }
+          }
+        }
+        .use-info-input-msg{
+          font-size: 12px;
+          color:#F90606;
+          height: 100%;
+          margin-left:560px;
+          display: none;
+        }
+      }
+      .use-info-update{
+        padding: 10px 0;
+        .use-info-update-title{
+          font-size: 12px;
+          color:#696969;
+          span{
+            display: none;
+            color:#F91212;
+            padding-left: 10px;
+          }
+        }
+        .use-info-update-main{
+          padding-left: 95px;
+          padding-top: 20px;
+          .use-info-update-img-item{
+            max-width: 135px;
+            height: 105px;
+            display: inline-block;
+            vertical-align: middle;
+            position: relative;
+            overflow: hidden;
+            //-webkit-transition: all 1s ease-out;
+            //-moz-transition: all 1s ease-out;
+            //-o-transition: all 1s ease-out;
+            //transition: all 1s ease-out;
+            .upload-cancel{
+              position: absolute;
+              width: 20px;
+              height: 20px;
+              background-position: 50%;
+              background-size: contain;background-image: url(../images/cancel.png);
+              right: 0;
+              top:0;
+            }
+            .upload{
+              cursor: pointer;
+            }
+            img{
+              max-width: 100%;
+              max-height: 100%;
+            }
+            &:not(:first-child){
+              margin-left: 20px;
+            }
+          }
+        }
+      }
+      /*票种列表样式*/
+      .use-info-select-price{
+        .use-info-select-price-title{
+          font-size: 18px;
+          color:#626262;
+          padding: 10px;
+        }
+        .price-title{
+          padding: 5px 50px 5px;
+          padding-left: 70px;
+          margin-right: 30px;
+          .box_sizing();
+          color:#9A9A9A;
+          background-color: #F3F3F3;
+          .display_flex();
+          .jcs();
+          .align_items(center);
+        }
+        .price-box{
+          padding: 5px 12px;
+          .display_flex();
+          .align_items(center);
+          position: relative;
+          margin-right: 30px;
+          .price-dis{
+            .flex(1);
+            padding-right: 100px;
+            color:#707070;
+            a{
+              color:#3FBB3C;
+              font-size: 12px;
+              padding:0 10px;
+              padding-right: 18px;
+              position: relative;
+              &:after{
+                position: absolute;
+                top: 50%;
+                right:0;
+                -webkit-transform: translate(0%, -50%);
+                -moz-transform: translate(0%, -50%);
+                -ms-transform: translate(0%, -50%);
+                transform: translate(0%, -50%);
+                width: 14px;
+                height: 14px;
+                content: "";
+                display: inline-block;
+                background-image: url(../images/look_all.png);
+                background-position: 50%;
+                background-repeat: no-repeat;
+              }
+            }
+          }
+          .price{
+            position: absolute;
+            top: 50%;
+            -webkit-transform: translate(0%, -50%);
+            -moz-transform: translate(0%, -50%);
+            -ms-transform: translate(0%, -50%);
+            transform: translate(0%, -50%);
+            width: 95px;
+            right: 0;
+            color:#ED742B;
+            line-height: 34px;
+            font-weight: 600;
+            font-size: 16px;
+          }
+        }
+        .dis{
+          display: none;
+          width: 660px;
+          position: absolute;
+          z-index: 100;
+          border:1px solid red;
+          background-color: #fff;
+          box-shadow:0px 0px 4px 1px #cac4c4;
+          padding: 20px;
+          color:#848484;
+          .dis-title{
+            padding: 10px 0;
+          }
+          .dis-main{
+            font-size: 12px;
+            line-height: 22px;
+          }
+          .close-dis{
+            position: absolute;
+            top: 0px;
+            right: 10px;
+            font-size: 30px;
+          }
+        }
+      }
+      .ticket-count-box{
+        .ticket-count-btn{
+          .display_flex();
+          .align_items(center);
+          .jcs();
+          width: 130px;
+          float: left;
+          height: 100%;
+          background-color: #E9E9E9;
+          div{
+            padding: 0;
+            background-color: #fff;
+            text-align: center;
+            .box_sizing();
+            width: 42px;
+            height: 36px;
+            border:none;
+          }
+          span{
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-position: 50%;
+            background-repeat: no-repeat;
+            cursor:pointer;
+            &.jian{
+              background-image: url(../images/jian.png);
+            }
+            &.jia{
+              background-image: url(../images/jia.png);
+            }
+          }
+        }
+        .ticket-info{
+          margin-left: 140px;
+          color:#FA2929;
+          display: none;
+        }
+      }
+      /*订票须知*/
+      .use-info-warn-box{
+        padding: 20px 0 0 0;
+        p{
+          color:#7D7D7D;
+          padding: 5px 0;
+        }
+        .warn{
+          color:#FF6570;
+        }
+      }
+    }
+    &.select-seat-time{
+      width: auto;
+      float: none;
+      .use-info-input-box{
+        margin: 0 auto;
+        width: 700px;
+      }
+      .go-select-seat{
+        padding: 80px 150px;
+        a{
+          display: block;
+          margin: 0 auto;
+          width: 165px;
+          height: 45px;
+          .border_radius(3px);
+          line-height: 45px;
+          font-size: 16px;
+          text-align: center;
+          background-color: #EB6100;
+          color:#fff;
+        }
+      }
+    }
+  }
+  .use-info-right{
+    margin-left: 780px;
+    border-top:6px solid #EB6100;
+    .border_radius(3px);
+    padding: 0 20px;
+    background-color: #fff;
+    &>.use-info-right-buy-msg{
+      padding: 10px 0;
+      color:#747474;
+      em{
+        font-style: normal;
+      }
+      &:not(:last-child){
+        border-bottom: 1px solid #E3E3E3;
+      }
+      .title{
+        color:#383838;
+        text-align: left;
+        &>span{
+          float: left;
+        }
+        p{
+          margin-left: 45px;
+          span{
+            display: inline-block;
+            margin-left: 3px;
+          }
+        }
+      }
+      .times{
+        text-align: center;
+        font-size: 12px;
+        padding: 5px 0 10px;
+      }
+      .span{
+        text-align: right;
+        padding-top: 5px;
+        .money{
+          &:before{
+            content: "￥";
+            display: inline-block;
+            margin-right: 2px;
+          }
+        }
+        &>span{
+          display: inline-block;
+          width: 100px;
+          float: right;
+        }
+        .buy-money{
+          color:#ED7836;
+          font-weight: 600;
+        }
+        .class-money{
+          color:#ED7836;
+        }
+      }
+    }
+  }
+}
+.use-info-submit{
+  background-color: #fff;
+  box-shadow: 0px 0px 4px 1px #cac4c4;
+  height: 70px;
+  .use-info-submit-main{
+    .marget-1100();
+    .display_flex();
+    .align_items(center);
+    .jcs();
+    height: 100%;
+    .layui-form-checkbox[lay-skin="primary"] i{border: 1px solid #FF0404;width: 12px;height: 12px;line-height: 12px;}
+    .layui-form-checkbox[lay-skin="primary"]:hover i{border-color: #FF0404;}
+    .layui-form-checked[lay-skin="primary"] i{    border-color: #FF0404;  background-color: #FF0404;  color: #fff;}
+    .use-info-submit-submit{
+      cursor: pointer;
+      width: 175px;
+      height: 40px;
+      .border_radius(3px);
+      display: block;
+      background-color: #EB6100;
+      text-align: center;
+      line-height: 40px;
+      color:#fff;
+    }
+  }
+}
+
+.comm-wrap{
+  .marget-1100();
+  background-color: #fff;
+  .border_radius(3px);
+  color:#5A5A5A;
+}
+
+/*选择支付方式*/
+.select-pay-title{
+  margin: 0 20px;
+  .display_flex();
+  .align_items(center);
+  .jcs();
+  padding: 10px 0;
+  border-bottom: 1px solid #F8F8F8;
+  &>p{
+    &:last-child{
+      font-size: 12px;
+      span{
+        color: #EB6100;
+      }
+    }
+  }
+}
+.select-pay-main{
+  .display_flex();
+  .justify_content(center);
+  .align_items(center);
+  padding: 40px 0;
+  &>div{
+    width: 210px;
+    height: 65px;
+    margin-left: 20px;
+    border:1px solid #F1F1F1;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    &.zhi_fu_bao{
+      background-image: url(../images/zhi_fu_bao.png);
+      &.selected{
+        border: 1px solid transparent;
+        background-image: url(../images/zhi_fu_bao.png),url(../images/selected_pay.png);
+      }
+    }
+    &.we_chat{
+      background-image: url(../images/wei_chat.png);
+      &.selected{
+        border: 1px solid transparent;
+        background-image: url(../images/wei_chat.png),url(../images/selected_pay.png);
+      }
+    }
+    input{
+      opacity: 0;
+      display: none;
+    }
+    label{
+      display: block;
+      width: 100%;
+      height: 100%;
+      cursor: pointer;
+    }
+  }
+}
+.select-pay-submit{
+  padding: 10px;
+  .display_flex();
+  .align_items(center);
+  .justify_content(flex-end);
+  span{
+    color:#EB6100;
+    font-weight: 600;
+  }
+  input{
+    text-align: center;
+    width: 110px;
+    height: 30px;
+    line-height: 30px;
+    color: #fff;
+    background-color: #EB6100;
+    border: none;
+    outline: none;
+    .border_radius(2px);
+    margin-left: 20px;
+    cursor: pointer;
+  }
+}
+
+/*支付成功*/
+.pay-success{
+  padding: 20px 10px;
+  .pay-success-title{
+    .display_flex();
+    .align_items(center);
+    .justify_content(center);
+    padding: 20px 0;
+    span{
+      padding-left: 20px;
+      font-size: 16px;
+    }
+  }
+  .pay-success-p{
+    padding-left: 420px;
+    padding-bottom: 5px;
+    .pay-success-p-title{
+      float: left;
+      width: 80px;
+    }
+    p{
+      margin-left: 80px;
+      span{
+        color: #EB6100;
+        padding-left: 5px;
+      }
+    }
+  }
+  .pay-success-go{
+    padding: 60px 0 30px 0;
+    text-align: center;
+    a{
+      display: inline-block;
+      .border_radius(5px);
+      color:#fff;
+      width: 146px;
+      height: 40px;
+      font-size: 15px;
+      line-height: 40px;
+      background-color: #EB6100;
+    }
+  }
+  .pay-success-warn{
+    margin: 0 20px;
+    border-top: 1px solid #E2E2E2;
+    padding: 15px 10px 30px 10px;
+    .pay-success-warn-title{
+      span{
+        display: inline-block;
+        width: 16px;
+        height: 20px;
+        background-position: 50%;
+        background-repeat: no-repeat;
+        background-image: url(../images/warm.png);
+        vertical-align: text-bottom;
+        margin-right: 5px;
+        background-size: contain;
+      }
+      color:#5E5E5E;
+    }
+    .pay-success-warn-msg{
+      padding:10px 20px;
+      color:#777777;
+      font-size: 12px;
+    }
+  }
+}
+
+/*支付页面样式*/
+.pay{
+  background-color: #fff;
+  padding: 0 20px;
+  .pay-title{
+    .display_flex();
+    .align_items(center);
+    padding: 5px 0;
+    &.pay-we-chat{
+      .justify_content(center);
+    }
+    &.zhi-fu-bao{
+      .justify_content(flex-start);
+    }
+  }
+  .pay-msg{
+    padding: 10px 20px;
+    border-top: 1px solid #F5F5F5;
+    border-bottom: 1px solid #F5F5F5;
+    .display_flex();
+    .align_items(center);
+    &>div{
+      font-size: 12px;
+      line-height: 26px;
+      .flex(1);
+      &.pay-price{
+        .flex(.2);
+        font-size: 16px;
+        span{
+          font-size: 18px;
+          font-weight: 600;
+          color:#EB6100;
+        }
+        &.zhi-fu-bao{
+          align-self:center;
+        }
+        &.we-chat{
+          align-self:flex-end;
+        }
+      }
+      &:not(:last-child){
+        padding-right: 20px;
+      }
+    }
+  }
+  .pay-main{
+    .display_flex();
+    .justify_content(center);
+    .align_items(center);
+    padding-bottom: 50px;
+    padding-top: 30px;
+    .pay-zhi-bu-bao{
+      .pay-zhi-bu-bao-title{
+        font-size: 12px;
+        color:#555555;
+        text-align: center;
+      }
+      .pay-money{
+        font-size: 24px;
+        font-weight: 600;
+        color:#EB6100;
+        text-align: center;
+        padding: 5px 0 10px 0;
+      }
+      .pay-zhi-bu-bao-main{
+        border: 1px solid #DDDDDD;
+        padding: 5px;
+        width: 180px;
+        height: 234px;
+        img{
+          width: 100%;
+        }
+        .zhi-fu-bao-msg{
+          padding-top: 10px;
+        }
+      }
+    }
+    .pay-we-chat{
+      .display_flex();
+      .justify_content(center);
+      .align_items(center);
+      .pay-we-chat-right{
+        img{
+          display: block;
+          margin: 0 auto;
+        }
+        padding: 0 40px;
+        .we-chat-pay-msg{
+          padding-top: 20px;
+        }
+      }
+    }
+  }
+}
+
+/*区域选择样式*/
+.select-area{
+  padding: 0 45px;
+  .select-area-title{
+    padding: 20px 0;
+    color:#5C5C5C;
+    font-size: 18px;
+    border-bottom: 1px solid #EFEFEF;
+    span{
+      font-size: 14px;
+    }
+  }
+  .select-area-main{
+    //height: 500px;
+    min-height: 500px;
+    padding-top: 20px;
+    position: relative;
+    .select-area-ticket-dcs{
+      width: 205px;
+      box-shadow: 0px 0px 4px 1px #cac4c4;
+      //padding: 10px;
+      position: absolute;
+      z-index: 3;
+      background-color: #fff;
+      .title{
+        font-size: 18px;
+        color:#686868;
+        padding: 10px 10px 0;
+      }
+      .price-list{
+        padding: 0 10px;
+        li{
+          .display_flex();
+          .align_items(center);
+          .jcs();
+          padding: 5px 0;
+          p{
+            margin-right: 30px;
+            width: 35px;
+            height: 10px;
+          }
+          div{
+            .display_flex();
+            .align_items(center);
+            .jcs();
+            .flex(1);
+            color:#6B6B6B;
+            padding-right: 10px;
+            em{
+              font-style: normal;
+              color:#E55D44;
+            }
+          }
+        }
+      }
+      .area-min{
+        border-bottom: 1px solid #EEEEEE;
+      }
+    }
+    .select-area-area{
+      height: 100%;
+      min-height: 100%;
+      position: relative;
+      &:before{
+        content: "";
+        display: table;
+        //clear:both;
+      }
+      .set_scale_box{
+        .display_flex();
+        .align_items(flex-end);
+        .justify_content(flex-end);
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: 2;
+        a{
+          width: 30px;
+          height: 30px;
+          display: inline-block;
+          border:1px solid #EEEEEE;
+          background-repeat: no-repeat;
+          background-position: 50%;
+          background-size: cover;
+          &:not(:last-child){
+            margin-right: 10px;
+          }
+        }
+        .scale_max{
+          background-image: url(../images/scale_max.png);
+        }
+        .scale_min{
+          background-image: url(../images/scale_min.png);
+        }
+      }
+      .selected_seat{
+        width: 180px;
+        box-shadow: 0px 0px 4px 1px #cac4c4;
+        background-color: #fff;
+        padding-bottom: 20px;
+        min-height: 400px;
+        overflow-x: hidden;
+        overflow-y: auto;
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: 2;
+        display: none;
+        .title{
+          color:#333333;
+          padding: 10px 0;
+          text-align: center;
+          font-size: 14px;
+          background-color: #F1F0F0;
+          span{
+            color:#EB2727;
+            display: inline-block;
+            margin-left: 10px;
+          }
+        }
+        .submit_order{
+          width: 156px;
+          height: 38px;
+          .border_radius(5px);
+          line-height: 38px;
+          text-align: center;
+          color:#fff;
+          background-color: #EB6100;
+          margin: 20px auto 0;
+          display: block;
+        }
+        .seat_list{
+          //max-height: 380px;
+          //min-height: 200px;
+          height: 380px;
+          overflow: hidden;
+          overflow-y: auto;
+          li{
+            border-bottom: 1px solid #F0F0F0;
+            padding: 0 10px;
+            &:hover{
+              i{
+                background-image: url(../images/trash-active.png);
+              }
+            }
+            div{
+              .display_flex();
+              .align_items(center);
+              padding: 10px 0;
+              img{
+                width: 20px;
+                height: 20px;
+                margin-right: 10px;
+              }
+              span{
+                .flex(1);
+              }
+              i{
+                width: 15px;
+                height: 15px;
+                background-image: url(../images/trash.png);
+                background-position: 50%;
+                background-repeat: no-repeat;
+                background-size: cover;
+                cursor:pointer;
+              }
+            }
+            p{
+              padding-bottom: 10px;
+              span{
+                display: inline-block;
+                width: 80px;
+                vertical-align: top;
+              }
+            }
+          }
+        }
+      }
+      .seat_main{
+        min-height: 100%;
+        //padding-top: 32px;
+        //margin-top:-32px;
+        .box_sizing();
+        position: relative;
+        z-index: 1;
+      }
+    }
+  }
+}
+
+
+
+.top-msg{
+  display: none;
+  .mask{
+    position: fixed;
+    top:0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,.7);
+    z-index: 999;
+  }
+  .mask-main{
+    .position_a();
+    position: fixed;
+    z-index: 1000;
+    width: 350px;
+    height: 100px;
+    .border_radius(10px);
+    background-color: #fff;
+    .mask-title{
+      font-size: 14px;
+      text-align: center;
+      padding: 20px 0 15px;
+      color:#767676;
+    }
+    .mask-loading{
+      text-align: center;
+      height: 30px;
+      img{
+        height: 100%;
+      }
+    }
+  }
+}
+
+#singleSeatMessage{
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  width: 140px;
+  position: fixed;
+  z-index: 10000;
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  &>p{
+    font-size: 14px;
+    padding-bottom: 5px;
+  }
+}
+

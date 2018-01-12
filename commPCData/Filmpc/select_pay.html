@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <include file="./themes/simplebootx/Filmpc/Public/head.html" />
+</head>
+<body>
+<div class="comm">
+    <header class="comm-head">
+        <img src="__pub__/images/banner01.png" alt=""/>
+    </header>
+    <div class="buy-ticket-status">
+        <!--
+            已完成流程就添加active类名
+         -->
+        <div class="buy-ticket-item active">
+            <span class="buy-ticket-item-title">选择商品</span>
+            <p><span>1</span></p>
+        </div>
+        <div class="buy-ticket-item active">
+            <span class="buy-ticket-item-title">填写信息</span>
+            <p><span>3</span></p>
+        </div>
+        <div class="buy-ticket-item active">
+            <span class="buy-ticket-item-title">在线支付</span>
+            <p><span>4</span></p>
+        </div>
+        <div class="buy-ticket-item">
+            <span class="buy-ticket-item-title">购票成功</span>
+            <p><span>4</span></p>
+        </div>
+    </div>
+    <main class="comm-wrap">
+        <div class="select-pay-title">
+            <p>选择支付方式</p>
+            <p>请您在 <span data-time></span> 内支付完成, 超时订单会自动取消。</p>
+        </div>
+        <form action="{:U('Pay/to_pay')}" method="post">
+            <input type="hidden" name="id" value="{$info.id}"/>
+            <div class="select-pay-main">
+                <div class="zhi_fu_bao selected">
+                    <label for="zhi_fu_bao"></label>
+                    <input type="radio" id="zhi_fu_bao" name="paytype" value="zfb" checked/>
+                </div>
+                <div class="we_chat">
+                    <label for="we_chat"></label>
+                    <input type="radio" id="we_chat" name="paytype" value="wx"/>
+                </div>
+            </div>
+            <div class="select-pay-submit">
+                <p>实付金额：<span>￥{$info.price}</span></p>
+                <input type="submit"/>
+            </div>
+        </form>
+    </main>
+    <include file="./themes/simplebootx/Filmpc/Public/footer.html" />
+</div>
+<script src="__pub__/lib/layui/layui.js"></script>
+<script src="__pub__/js/app.js"></script>
+<script>
+    var time = parseFloat('{$last_pay_time}');
+    layui.use("jquery",function(){
+        var $ = layui.jquery;
+        $(".select-pay-title > p:last-child span");
+
+        function getTime(){
+            var f = parseInt(time/60);
+            var m = time%60;
+            m = m<10?'0'+m:m;
+            f = f<10?'0'+f:f;
+            $('[data-time]').text(f+' 分 '+m+' 秒');
+        }
+        var timeId = setInterval(function(){
+            getTime();
+            time--;
+            if(time<1){
+                clearInterval(timeId);
+            }
+        },1000);
+    });
+</script>
+</body>
+</html>

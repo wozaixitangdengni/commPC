@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <include file="./themes/simplebootx/Filmpc/Public/head.html" />
+    <link rel="stylesheet" href="__pub__/area/luzhou/css/area_min.css" />
+    <style>
+        .test{
+            /*-webkit-transform:scale(7deg);*/
+            /*-ms-transform:scale(7deg);*/
+            /*-moz-transform:scale(7deg);*/
+            /*-o-transform:scale(7deg);*/
+            transform:scale(.2,.2);
+        }
+    </style>
+    <script>
+        var data_seat ={$seat};
+        /*限购数量*/
+        var max_buy='{:sys_config("wx_max_buy")}';
+        /*是否填写资料*/
+        var is_msg="{:sys_config('order_msg')}";//1:填写资料，0：不填写
+        /*填写资料页面*/
+        var seat_info_url="{:U('Index/seat_msg')}";
+        /*立即下单*/
+        var do_order_url="{:U('Order/do_order',array('p_order'=>1,'film_id'=>$info['id']))}";
+        /*保存信息*/
+        var tmp_url="{:U('Order/tmp_order')}";//异步保存信息成功后再跳转页面
+        /*区域名称*/
+        var hall_title='{$info.title}';
+
+        /*选中时间*/
+        var _date = "{$order.date1}";//date1
+        var _times = "{$order.times}";//times
+        /*商品id*/
+        var hall_id='{$info.id}';//hall_id
+        var film_id='{$film_id}';//film_id
+    </script>
+</head>
+<body>
+<div class="comm">
+    <header class="comm-head">
+        <img src="__pub__/images/banner01.png" alt=""/>
+    </header>
+    <div class="buy-ticket-status">
+        <!--
+            已完成流程就添加active类名
+         -->
+        <div class="buy-ticket-item active">
+            <span class="buy-ticket-item-title">选择商品</span>
+            <p><span>1</span></p>
+        </div>
+        <div class="buy-ticket-item">
+            <span class="buy-ticket-item-title">选择座位</span>
+            <p><span>2</span></p>
+        </div>
+        <div class="buy-ticket-item">
+            <span class="buy-ticket-item-title">填写信息</span>
+            <p><span>3</span></p>
+        </div>
+        <div class="buy-ticket-item">
+            <span class="buy-ticket-item-title">在线支付</span>
+            <p><span>4</span></p>
+        </div>
+        <div class="buy-ticket-item">
+            <span class="buy-ticket-item-title">购票成功</span>
+            <p><span>5</span></p>
+        </div>
+    </div>
+    <main class="comm-wrap">
+        <div class="select-area">
+            <header class="select-area-title">
+                {$film.title} <span>>&nbsp;{$order.date1}  {$order.times}</span>
+            </header>
+            <div class="select-area-main" style="height: 500px">
+                <!--<div class="select-area-ticket-dcs">-->
+                    <!--<div class="area-min">-->
+                        <!--<div class="bg bg1">-->
+                            <!--<div class="desc">一层</div>-->
+                            <!--&lt;!&ndash;A区&ndash;&gt;-->
+                            <!--<div class="seatlink zwleft">-->
+                                <!--<a  data-id="4_a" class="active" href="{:U('Movies/seat',array('id'=>4,'season_id'=>$season_id))}" data-nid="4"></a>-->
+                            <!--</div>-->
+                            <!--&lt;!&ndash;B区&ndash;&gt;-->
+                            <!--<div class="seatlink zwcontent">-->
+                                <!--<a  data-id="5_b" href="{:U('Movies/seat',array('id'=>5,'season_id'=>$season_id))}" data-nid="5"></a>-->
+                            <!--</div>-->
+                            <!--&lt;!&ndash;C区&ndash;&gt;-->
+                            <!--<div class="seatlink zwright">-->
+                                <!--<a data-id="6_c" href="{:U('Movies/seat',array('id'=>6,'season_id'=>$season_id))}" data-nid="6"></a>-->
+                            <!--</div>-->
+
+                            <!--&lt;!&ndash;舞台&ndash;&gt;-->
+                            <!--<div class="bt">-->
+                                <!--<a href="javascript:;"></a>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="bg bg2">-->
+                            <!--<div class="desc">二层</div>-->
+                            <!--&lt;!&ndash;D区&ndash;&gt;-->
+                            <!--<div class="seatlink zwleft">-->
+                                <!--<a data-id="7_d" href="{:U('Movies/seat',array('id'=>7,'season_id'=>$season_id))}" data-nid="7"></a>-->
+                            <!--</div>-->
+                            <!--&lt;!&ndash;E区&ndash;&gt;-->
+                            <!--<div class="seatlink zwcontent">-->
+                                <!--<a data-id="8_e" href="{:U('Movies/seat',array('id'=>8,'season_id'=>$season_id))}" data-nid="8"></a>-->
+                            <!--</div>-->
+                            <!--&lt;!&ndash;F区&ndash;&gt;-->
+                            <!--<div class="seatlink zwright">-->
+                                <!--<a data-id="9_f" href="{:U('Movies/seat',array('id'=>9,'season_id'=>$season_id))}" data-nid="9"></a>-->
+                            <!--</div>-->
+                            <!--&lt;!&ndash;g区&ndash;&gt;-->
+                            <!--<div class="seatlink zwbottom">-->
+                                <!--<a data-id="10_g" href="{:U('Movies/seat',array('id'=>10,'season_id'=>$season_id))}" data-nid="10"></a>-->
+                            <!--</div>-->
+
+                            <!--&lt;!&ndash;舞台&ndash;&gt;-->
+                            <!--<div class="bt">-->
+                                <!--<a href="javascript:;"></a>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="scale-area">-->
+                            <!--<a href="javascript:;">放大</a>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<p class="title">-->
+                        <!--票价说明：-->
+                    <!--</p>-->
+                    <!--<ul class="price-list">-->
+                        <!--<li>-->
+                            <!--<p style="background-color: red"></p>-->
+                            <!--<div>-->
+                                <!--<span>vip区</span>-->
+                                <!--<span>-->
+                                    <!--<em>1000</em>-->
+                                    <!--元-->
+                                <!--</span>-->
+                            <!--</div>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--<p style="background-color: red"></p>-->
+                            <!--<div>-->
+                                <!--<span>vip区</span>-->
+                                <!--<span>-->
+                                    <!--<em>100</em>-->
+                                    <!--元-->
+                                <!--</span>-->
+                            <!--</div>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--<p style="background-color: red"></p>-->
+                            <!--<div>-->
+                                <!--<span>vip区</span>-->
+                                <!--<span>-->
+                                    <!--<em>10</em>-->
+                                    <!--元-->
+                                <!--</span>-->
+                            <!--</div>-->
+                        <!--</li>-->
+                    <!--</ul>-->
+                <!--</div>-->
+                <div class="select-area-area">
+                    <div class="set_scale_box" style="">
+                        <a href="javascript:void(0)" class="scale_max" id="max"></a>
+                        <a href="javascript:void(0)" class="scale_min" id="min"></a>
+                    </div>
+                    <div class="selected_seat">
+                        <p class="title">
+                            已选座位<span>5</span>
+                        </p>
+                        <ul class="seat_list">
+                            <li>
+                                <div>
+                                    <img src="__pub__/images/seat.png" alt="" style="background-color: red"/>
+                                    <span>￥280.00</span>
+                                    <i></i>
+                                </div>
+                                <p><span>{$info.title}</span> 1排5坐</p>
+                            </li>
+                        </ul>
+                        <a href="javascript:void(0)" class="submit_order">
+                            确定下单&nbsp;￥&nbsp;<span>7800.00</span>
+                        </a>
+                    </div>
+                    <div class="seat_main canvas_wrap">
+                        <canvas id="canvas" style="background:#fff"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <div id="singleSeatMessage">
+        <p class="number">座位号:<span>5排6座</span></p>
+        <p class="price">票价:<span>336.00元</span></p>
+    </div>
+    <include file="./themes/simplebootx/Filmpc/Public/footer.html" />
+</div>
+<div class="top-msg">
+    <div class="mask"></div>
+    <div class="mask-main">
+        <p class="mask-title">订单提交中，请稍后…</p>
+        <div class="mask-loading">
+            <img src="__pub__/images/load.gif" alt=""/>
+        </div>
+    </div>
+</div>
+<script src="__pub__/lib/layui/layui.js"></script>
+<script src="__pub__/js/app.js"></script>
+</body>
+</html>

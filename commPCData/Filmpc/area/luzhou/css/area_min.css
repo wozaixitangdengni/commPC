@@ -1,0 +1,128 @@
+.area-min {
+  padding: 5px;
+}
+.area-min .bg {
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: relative;
+}
+.area-min .bg a {
+  position: absolute;
+  display: block;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.area-min .bg1 {
+  height: 190px;
+  background-image: url(../images/bg1.png);
+}
+.area-min .bg1 .zwleft a {
+  width: 47px;
+  height: 120px;
+  top: 21px;
+  left: 6px;
+  background-image: url(../images/A1.png);
+}
+.area-min .bg1 .zwleft a.active {
+  background-image: url(../images/A2.png);
+}
+.area-min .bg1 .zwcontent a {
+  width: 80px;
+  height: 110px;
+  top: 26px;
+  left: 57px;
+  background-image: url(../images/B1.png);
+}
+.area-min .bg1 .zwcontent a.active {
+  background-image: url(../images/B2.png);
+}
+.area-min .bg1 .zwright a {
+  width: 47px;
+  height: 120px;
+  top: 21px;
+  left: 141px;
+  background-image: url(../images/C1.png);
+}
+.area-min .bg1 .zwright a.active {
+  background-image: url(../images/C2.png);
+}
+.area-min .bg1 .bt a {
+  width: 100px;
+  height: 25px;
+  background-image: url(../images/wutai.png);
+  top: 150px;
+  left: 49px;
+}
+.area-min .bg1 .desc {
+  font-size: 12px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.area-min .bg2 {
+  height: 115px;
+  background-image: url(../images/bg2.png);
+  background-size: 100% 90%;
+}
+.area-min .bg2 .zwleft a {
+  background-image: url(../images/D1.png);
+  width: 49px;
+  height: 50px;
+  top: 8px;
+  left: 26px;
+}
+.area-min .bg2 .zwleft a.active {
+  background-image: url(../images/D2.png);
+}
+.area-min .bg2 .zwcontent a {
+  background-image: url(../images/E1.png);
+  width: 52px;
+  height: 28px;
+  top: 22px;
+  left: 73px;
+}
+.area-min .bg2 .zwcontent a.active {
+  background-image: url(../images/E2.png);
+}
+.area-min .bg2 .zwright a {
+  background-image: url(../images/F1.png);
+  width: 47px;
+  height: 36px;
+  top: 13px;
+  left: 122px;
+}
+.area-min .bg2 .zwright a.active {
+  background-image: url(../images/F2.png);
+}
+.area-min .bg2 .zwbottom a {
+  background-image: url(../images/G1.png);
+  width: 126px;
+  height: 30px;
+  top: 53px;
+  left: 35px;
+}
+.area-min .bg2 .zwbottom a.active {
+  background-image: url(../images/G2.png);
+}
+.area-min .bg2 .bt a {
+  width: 100px;
+  height: 25px;
+  background-image: url(../images/wutai.png);
+  top: 82px;
+  left: 49px;
+}
+.area-min .bt a {
+  position: absolute;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.area-min .scale-area {
+  overflow: hidden;
+}
+.area-min .scale-area a {
+  color: #A5A5A5;
+  float: right;
+}

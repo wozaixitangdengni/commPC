@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <include file="./themes/simplebootx/Filmpc/Public/head.html" />
+    <script>
+        /*异步时间段，参数film_id,date*/
+        var ajax_time_url='{:U("ajax_time")}';
+        /*异步剩余数量，参数film_id,date,times*/
+        var ajax_rest_url='{:U("ajax_num")}';
+        var film_id='{$order.film_id}';
+        /*限购*/
+        var max_buy='{:sys_config("wx_max_buy")}';
+        /*选座无数量*/
+        var is_seat= 1;
+
+        var f_first_day = "{$first_day}";//默认显示第一天
+        var f_show_type = "{$info.show_type}";//日期样式，1：日历，2：列表
+        var is_xiangou='{:sys_config("wx_buy_type")}';//是否限购值为0就是不限购
+
+        /*立即下单*/
+        var do_order_url="{:U('Order/do_order',array('p_order'=>1,'film_id'=>$info['id']))}";
+        /*保存信息*/
+        var tmp_url="{:U('Order/tmp_order')}";//异步保存信息成功后再跳转页面
+
+        var define_price_id = "{$prices[0].id}";//默认选中价格id
+        var define_price_title = "{$prices[0].title}";//默认选中价格title
+        var define_price = "{$prices[0].price}";//默认选中价格
+
+        /*上传链接*/
+        var upload_url='{:U("Asset/Asset/up_base64")}';//参数 ramg
+        /*发送短信*/
+        var send_msg='{:U("Api/Mobileverify/send")}';/*post参数：mobile*/
+        /*运费*/
+        var mail_fee = parseFloat('{$ticket.mail_fee}');
+        /*订单价格*/
+        var order_price = parseFloat('{$order_data.price}');
+    </script>
+    <style>
+        .layui-form-radio{
+        .layui-form-radio
+        }
+        .layui-unselect.layui-form-select{
+            height: 100%;
+        }
+        .layui-select-title{
+            height: 100%;
+        }
+        .layui-select-title input{
+            width: 100%;
+            height: 100%;
+            border: none;
+            outline: none;
+            color: #757575;
+            background-color: #F3F3F3;
+            padding: 0 40px 0 30px;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+        .layui-form-select .layui-edge{
+            position: absolute;
+            z-index: 2;
+            right: 0;
+            top:3px;
+            width: 40px;
+            height: 40px;
+            border: none;
+            background-color: #E9E9E9;
+        }
+        .layui-form-select .layui-edge span{
+            display: block;
+            width: 100%;
+            height: 100%;
+            background-image: url(__pub__/images/selected_time.png);
+            background-repeat: no-repeat;
+            background-position: 50%;
+            transition: all .3s;
+            -webkit-transition: all .3s;
+        }
+        .layui-form-selected .layui-edge{
+            margin-top: -3px;
+            -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+        }
+        .layui-form-selected .layui-edge span{
+            -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+        }
+        .layui-laydate-hint{
+            display: none;
+        }
+
+        .layui-layer-btn{
+            display: none;
+        }
+        .layui-layer-dialog .layui-layer-content{
+            line-height: normal !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="comm">
+        <header class="comm-head">
+            <img src="__pub__/images/banner01.png" alt=""/>
+        </header>
+        <div class="buy-ticket-status">
+            <!--
+                已完成流程就添加active类名
+             -->
+            <div class="buy-ticket-item active">
+                <span class="buy-ticket-item-title">选择商品</span>
+                <p><span>1</span></p>
+            </div>
+            <div class="buy-ticket-item">
+                <span class="buy-ticket-item-title">选择座位</span>
+                <p><span>2</span></p>
+            </div>
+            <div class="buy-ticket-item">
+                <span class="buy-ticket-item-title">填写信息</span>
+                <p><span>3</span></p>
+            </div>
+            <div class="buy-ticket-item">
+                <span class="buy-ticket-item-title">在线支付</span>
+                <p><span>4</span></p>
+            </div>
+            <div class="buy-ticket-item">
+                <span class="buy-ticket-item-title">购票成功</span>
+                <p><span>5</span></p>
+            </div>
+        </div>
+        <form action="{:U('do_order')}" class="layui-form"  lay-filter="distpicker">
+            <main class="use-info">
+                <div class="use-info-left">
+                    <php>
+                        $is_msg=sys_config('order_msg');
+                    </php>
+                    <eq name="is_msg" value="1">
+                    <div class="use-info-left-box">
+                        <header class="use-info-left-box-title">
+                            购票者信息
+                        </header>
+                        <php>
+                            $order=sys_config('order_sys');
+                            $ticket=sys_config('ticket');
+                        </php>
+
+                        <div class="use-info-input-box">
+                            <div class="use-info-input-title">
+                                取票方式
+                            </div>
+                            <div class="use-info-input-main">
+                                <select name="ticket_type" lay-verify="required" lay-filter="ticket_type">
+                                    <option value="0">请选择取票方式</option>
+                                    <in name="ticket.ticket_type" value="all,auto">
+                                        <option value="1">自取</option>
+                                    </in>
+                                    <in name="ticket.ticket_type" value="all,mail">
+                                        <option value="2">快递</option>
+                                    </in>
+                                </select>
+                            </div>
+                            <div class="use-info-input-msg">
+                                * 请选择取票方式
+                            </div>
+                        </div>
+                        <div class="use-info-input-box">
+                            <div class="use-info-input-title">
+                                所在地区
+                            </div>
+                            <div class="use-info-input-main selects" id="distpicker">
+                                <select data-province="" lay-filter="province" name="province"></select>
+                                <select data-city="" lay-filter="city" name="city"></select>
+                                <select data-district="" lay-filter="district" name="district"></select>
+                                <input type="hidden" name="place"/>
+                            </div>
+                            <div class="use-info-input-msg">
+                                * 请选择所在地区
+                            </div>
+                        </div>
+                        <div class="use-info-input-box">
+                            <div class="use-info-input-title">
+                                详细地址
+                            </div>
+                            <div class="use-info-input-main">
+                                <input type="text" placeholder="请填写详细地址" name="address"/>
+                            </div>
+                            <div class="use-info-input-msg">
+                                * 请填写详细地址
+                            </div>
+                        </div>
+                        <eq name="order.name" value="1">
+                        <div class="use-info-input-box">
+                            <div class="use-info-input-title">
+                                姓&nbsp;&nbsp;&nbsp;名
+                            </div>
+                            <div class="use-info-input-main">
+                                <input type="text" placeholder="请填写姓名" name="name"/>
+                            </div>
+                            <div class="use-info-input-msg">
+                                * 请填写姓名
+                            </div>
+                        </div>
+                        </eq>
+                        <eq name="order.phone" value="1">
+                        <div class="use-info-input-box">
+                            <div class="use-info-input-title">
+                                手机号码
+                            </div>
+                            <div class="use-info-input-main get_code">
+                                <input type="number" placeholder="请填写有效手机号" name="phone"/>
+                                <eq name="order.phone_code" value="1">
+                                    <a class="get_code_btn" data-get-phone-code>
+                                        获取验证码
+                                    </a>
+                                </eq>
+                            </div>
+                            <div class="use-info-input-msg">
+                                * 请填写正确的手机号码
+                            </div>
+                        </div>
+                        </eq>
+                        <eq name="order.phone_code" value="1">
+                        <div class="use-info-input-box">
+                            <div class="use-info-input-title">
+                                短信验证码
+                            </div>
+                            <div class="use-info-input-main">
+                                <input type="text" placeholder="请填写手机短信验证码" name="phone_code"/>
+                            </div>
+                            <div class="use-info-input-msg">
+                                * 短信验证码有误
+                            </div>
+                        </div>
+                        </eq>
+                        <eq name="order.sex" value="1">
+                        <div class="use-info-input-box">
+                            <div class="use-info-input-title">
+                                性       别
+                            </div>
+                            <div class="use-info-input-main">
+                                <input type="radio" name="sex" value="1" title="男">
+                                <input type="radio" name="sex" value="2" title="女" checked>
+                            </div>
+                        </div>
+                        </eq>
+                        <eq name="order.age" value="1">
+                        <div class="use-info-input-box">
+                            <div class="use-info-input-title">
+                                年       龄
+                            </div>
+                            <div class="use-info-input-main">
+                                <input type="number" placeholder="请填写您的年龄" name="age"/>
+                            </div>
+                            <div class="use-info-input-msg">
+                                * 请填写年龄
+                            </div>
+                        </div>
+                        </eq>
+                        <eq name="order.img_code" value="1">
+                        <div class="use-info-input-box">
+                            <div class="use-info-input-title">
+                                图形验证码
+                            </div>
+                            <div class="use-info-input-main get_code">
+                                <input type="text" placeholder="请填写图形验证码" name="img_code"/>
+                                <a class="get_code_btn">
+                                    {:sp_verifycode_img('length=4&font_size=16&width=135&height=40&use_noise=1&use_curve=0','style="cursor: pointer;" title="点击获取"')}
+                                </a>
+                            </div>
+                            <div class="use-info-input-msg">
+                                * 图形验证码有误
+                            </div>
+                        </div>
+                        </eq>
+                        <eq name="order.id_card" value="1">
+                        <div class="use-info-input-box">
+                            <div class="use-info-input-title">
+                                身份证号码
+                            </div>
+                            <div class="use-info-input-main">
+                                <input type="text" placeholder="请填写身份证号码" name="id_card"/>
+                            </div>
+                            <div class="use-info-input-msg">
+                                * 请填写正确的身份证号码
+                            </div>
+                        </div>
+                        </eq>
+                        <eq name="order.id_card_img" value="1">
+                        <div class="use-info-update">
+                            <p class="use-info-update-title">
+                                请上传身份证正反面照
+                                <span data-shen-fen-span>
+                                    * 请上传身份证正反面照
+                                </span>
+                            </p>
+                            <div class="use-info-update-main" data-shen-fen>
+                                <div class="use-info-update-img-item upload" id="shen-fen-zheng-upload">
+                                    <img src="__pub__/images/selected_img.png" alt=""/>
+                                    <input type="hidden" name="card_img1"/>
+                                    <input type="hidden" name="card_img2"/>
+                                </div>
+                            </div>
+                        </div>
+                        </eq>
+                        <eq name="order.xueli" value="1">
+                        <div class="use-info-input-box">
+                            <div class="use-info-input-title">
+                                学&nbsp;&nbsp;&nbsp;历
+                            </div>
+                            <div class="use-info-input-main">
+                                <select name="xueli" lay-verify="required">
+                                    <option value="0">请选择最高学历</option>
+                                    <option value="高中">高中</option>
+                                </select>
+                            </div>
+                            <div class="use-info-input-msg">
+                                * 请选择最高学历
+                            </div>
+                        </div>
+                        </eq>
+                        <eq name="order.company" value="1">
+                        <div class="use-info-input-box">
+                            <div class="use-info-input-title">
+                                公&nbsp;&nbsp;&nbsp;司
+                            </div>
+                            <div class="use-info-input-main">
+                                <input type="text" placeholder="请填写所在公司" name="company"/>
+                            </div>
+                            <div class="use-info-input-msg">
+                                * 请填写所在公司名称
+                            </div>
+                        </div>
+                        </eq>
+                        <eq name="order.bumen" value="1">
+                        <div class="use-info-input-box">
+                            <div class="use-info-input-title">
+                                部&nbsp;&nbsp;&nbsp;门
+                            </div>
+                            <div class="use-info-input-main">
+                                <input type="text" placeholder="请填写所在部门" name="bumen"/>
+                            </div>
+                            <div class="use-info-input-msg">
+                                * 请填写所在部门
+                            </div>
+                        </div>
+                        </eq>
+                        <eq name="order.zhiwei" value="1">
+                        <div class="use-info-input-box">
+                            <div class="use-info-input-title">
+                                职&nbsp;&nbsp;&nbsp;位
+                            </div>
+                            <div class="use-info-input-main">
+                                <input type="text" placeholder="请填写所在职位" name="zhiwei"/>
+                            </div>
+                            <div class="use-info-input-msg">
+                                * 请填写所在职位
+                            </div>
+                        </div>
+                        </eq>
+                        <eq name="order.self_img" value="1">
+                        <div class="use-info-update">
+                            <p class="use-info-update-title">
+                                请上传本人照片
+                                <span data-ben-ren-span>
+                                    * 请上传本人照片
+                                </span>
+                            </p>
+                            <div class="use-info-update-main" data-fen-ren>
+                                <div class="use-info-update-img-item upload" id="ben-ren-upload">
+                                    <img src="__pub__/images/selected_img.png" alt=""/>
+                                    <input type="hidden" name="self_img"/>
+                                </div>
+                            </div>
+                        </div>
+                        </eq>
+                    </div>
+                    </eq>
+                    <div class="use-info-left-box">
+                        <header class="use-info-left-box-title">
+                            订票须知
+                        </header>
+                        <div class="use-info-warn-box">
+                            {$order.tips}
+                        </div>
+                    </div>
+                </div>
+                <div class="use-info-right">
+                    <div class="use-info-right-buy-msg">
+                        结算信息
+                    </div>
+                    <div class="use-info-right-buy-msg">
+                        <div class="title">
+                            <span>商品：</span>
+                            <p>
+                                <em style="display: block">{$film.title}</em>
+                                <span data-selected-price style="display: none">{$prices[0].title}</span>
+                            </p>
+                        </div>
+                        <p class="times" data-selected-data-time><span>{$order_data.date1}</span> <em>{$order_data.times}</em> </p>
+                        <foreach name="order_data.prices" item="v">
+                            <p class="span" data-selected-price-title><em>{$hall.title} {$v.seat_name}</em> <span class="class-money money">{$v.price.price} x 1</span></p>
+                        </foreach>
+
+                    </div>
+                    <div class="use-info-right-buy-msg">
+                        <p class="span" data-order-money>订单金额 <span class="money">{$order_data.price}</span></p>
+                        <p class="span" data-order-yun-fei>运费 <span>+￥ 0</span></p>
+                    </div>
+                    <div class="use-info-right-buy-msg">
+                        <p class="span">实付金额 <span class="buy-money money" data-shi-fu>{$order_data.price}</span></p>
+                    </div>
+                </div>
+            </main>
+            <div class="use-info-submit">
+                <div class="use-info-submit-main">
+                    <div class="use-info-submit-msg-check">
+                        <input type="checkbox" name="tiao_kuan" title="我已同意以上订票须知条款" lay-skin="primary" checked>
+                    </div>
+                    <a class="use-info-submit-submit">
+                        提交订单
+                    </a>
+                </div>
+            </div>
+        </form>
+        <footer class="comm-footer">
+            <p>
+                技术支持：喵票科技
+            </p>
+        </footer>
+    </div>
+    <div class="top-msg">
+        <div class="mask"></div>
+        <div class="mask-main">
+            <p class="mask-title">订单提交中，请稍后…</p>
+            <div class="mask-loading">
+                <img src="__pub__/images/load.gif" alt=""/>
+            </div>
+        </div>
+    </div>
+    <script src="__pub__/lib/layui/layui.js"></script>
+    <script src="__pub__/js/tool.js"></script>
+    <script src="__pub__/lib/distpicker/distpicker.data.js"></script>
+    <script src="__pub__/js/app.js"></script>
+</body>
+</html>

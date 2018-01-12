@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <include file="./themes/simplebootx/Filmpc/Public/head.html" />
+</head>
+<body>
+<div class="comm">
+    <header class="comm-head">
+        <img src="__pub__/images/banner01.png" alt=""/>
+    </header>
+    <div class="buy-ticket-status">
+        <!--
+            已完成流程就添加active类名
+         -->
+        <div class="buy-ticket-item active">
+            <span class="buy-ticket-item-title">选择商品</span>
+            <p><span>1</span></p>
+        </div>
+        <div class="buy-ticket-item active">
+            <span class="buy-ticket-item-title">选择座位</span>
+            <p><span>1</span></p>
+        </div>
+        <div class="buy-ticket-item active">
+            <span class="buy-ticket-item-title">填写信息</span>
+            <p><span>3</span></p>
+        </div>
+        <div class="buy-ticket-item active">
+            <span class="buy-ticket-item-title">在线支付</span>
+            <p><span>4</span></p>
+        </div>
+        <div class="buy-ticket-item active">
+            <span class="buy-ticket-item-title">购票成功</span>
+            <p><span>4</span></p>
+        </div>
+    </div>
+    <main class="comm-wrap">
+        <div class="pay-success">
+            <p class="pay-success-title">
+                <img src="images/pay_success.png" alt=""/>
+                <span>恭喜您，支付成功！</span>
+            </p>
+            <div class="pay-success-p"><span class="pay-success-p-title">订单编号</span><p>{$info.order_no}</p></div>
+            <div class="pay-success-p"><span class="pay-success-p-title">商&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;品</span><p>{$info['goods'][0].title}</p></div>
+            <div class="pay-success-p"><span class="pay-success-p-title">票&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;种</span><p>{$info['goods'][0].p_title}<span>x {:count($info['codes'])}</span> </p></div>
+            <div class="pay-success-p"><span class="pay-success-p-title">兑 换 码</span>
+                <foreach name="info['codes']" item="v">
+                    <p>{$v.code}</p>
+                </foreach>
+            </div>
+            <div class="pay-success-p"><span class="pay-success-p-title"> 时&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;间</span><p>{$info['goods'][0].date1}  {$info['goods'][0].times}</p></div>
+            <div class="pay-success-p"><span class="pay-success-p-title"> 地&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;点</span><p>{$info['codes'][0].address}</p></div>
+            <div class="pay-success-p"><span class="pay-success-p-title"> 支付时间</span><p>{$info.paytime|date="Y-m-d H:i:s",###}</p></div>
+            <div class="pay-success-p"><span class="pay-success-p-title"> 实付金额</span><p>{$info.price}元</p></div>
+            <div class="pay-success-go">
+                <a href="javascript:;">
+                    继续购票
+                </a>
+            </div>
+            <div class="pay-success-warn">
+                <p class="pay-success-warn-title"><span></span>温馨提示:</p>
+                <p class="pay-success-warn-msg">请您注意查收支付成功短信，订单详情可于短信查看，如遇系统繁忙等情况可能会延迟发送，如有疑问请咨询电话{:sys_config('service_mobile')}。</p>
+            </div>
+        </div>
+    </main>
+    <include file="./themes/simplebootx/Filmpc/Public/footer.html" />
+</div>
+<script src="__pub__/lib/layui/layui.js"></script>
+<script src="__pub__/js/app.js"></script>
+</body>
+</html>
